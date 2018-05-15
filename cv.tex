@@ -1,0 +1,362 @@
+% resume.tex
+%
+% Siddharth Mishra-Sharma's Resume
+
+
+%%%%%%%%%%%%
+% Basic setup
+
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{etaremune}
+\usepackage{setspace}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0in}
+\hyphenchar\font=-1
+\usepackage{geometry} 
+%\geometry{a4paper, twoside} 
+\setstretch{1}
+\usepackage{booktabs}
+\usepackage{topcapt}
+\usepackage{ textcomp }
+\usepackage{tabulary}
+\usepackage{hyphenat}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{marvosym}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{wasysym}
+\usepackage{ marvosym }
+
+%%%%%%%%%%%%
+% PDF setup
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+\hypersetup{
+    letterpaper,
+    colorlinks,
+    urlcolor=violet,
+    pdfpagemode=none,
+    pdftitle={Siddharth Mishra CV},
+    pdfauthor={Siddharth Mishra},
+    pdfsubject={Siddharth Mishra CV},
+    pdfkeywords={}
+}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+% Margin setup
+\oddsidemargin  -0.5in
+\evensidemargin -0.5in
+\textwidth      7.4in
+\headheight     -0.6in
+\topmargin      0.0in
+\textheight=10.2in
+%\footheight 1.0in 
+%%%%%%%%%%%%
+
+%%Custom commands
+%
+%% In case you need to adjust margins:
+%%\topmargin=-0.5in      
+%\evensidemargin=-0.5in     
+%\oddsidemargin=-0.5in      
+%\textwidth=7.2in        
+%%\textheight=9.9in       
+%\headsep=0.25in         
+%
+%
+%% Setup the header and footer
+%\pagestyle{fancy}                                                      
+%\cfoot{Page\ \thepage\ of\ 2}                                                               
+%%\rfoot{}                         
+%\renewcommand\headrulewidth{0.0pt}                                     
+%\renewcommand\footrulewidth{0.4pt}  
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbullet}
+\makeatother
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{3pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{\end{itemize}
+}
+
+\newenvironment{packed_enumerate}{
+\begin{etaremune}
+  \setlength{\itemsep}{3pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}{\end{etaremune}
+}
+%-----------------------------------------------------------
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.8in}{l@{\extracolsep{\fill}}r}
+		{#1} & {#2} \\
+		{#3} & {#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+\usepackage{fancyhdr}
+
+\fancypagestyle{style1}{
+\fancyhf{}
+\fancyhead[C]{style 1 with thin line}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+}
+
+\fancypagestyle{style2}{
+\fancyhf{}
+\fancyhead[C]{STYLE 2 WITH THICK LINE}
+\fancyfoot[C]{= \thepage{} =}
+\renewcommand{\headrulewidth}{1pt}
+}
+
+
+\begin{document}
+
+%% Heading
+\begin{center}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
+&\huge{\textbf{\sc{Siddharth Mishra-Sharma}}}&   \\
+& Jadwin Hall, Princeton, NJ 08544, USA &\\
+
+&\Telefon\hspace{1mm}+1 609-933-0103 ~\Letter\hspace{1mm}\href{mailto:sm806@cam.ac.uk}{\texttt{smsharma@princeton.edu}} ~\Mundus\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &\\
+\hline\hline
+\end{tabular*}
+\end{center}
+
+\vspace{4.0mm}
+
+%% Appointments 
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Academic Appointments}}\\
+\hline
+\end{tabular*}
+
+% NYU
+\noindent 
+\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{New York University}  & \textbf {New York, NY, USA}\\
+{Center for Cosmology and Particle Physics} \vspace{1mm}\\
+{Postdoctoral Associate}  & {Sep. 2018 -- Present} \vspace{.0mm} \\  
+\end{tabular*}
+    
+ \vspace{4.0mm}
+
+%% Education 
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Education}}\\
+\hline
+\end{tabular*}
+
+% Princeton
+\noindent 
+\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Princeton University}  & \textbf {Princeton, NJ, USA}\vspace{1mm}\\
+{Ph.D. in Theoretical Physics}  & {Sep. 2013 -- Aug. 2018} \vspace{.0mm} \\  
+\small{Advisor: Mariangela Lisanti}& {} \vspace{.0mm} \\
+\small{Thesis: \emph{The Search for Extragalactic Dark Matter}}& {} \vspace{2mm} \\
+
+\end{tabular*}
+
+% Cambridge
+\noindent 
+\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{University of Cambridge}  & \textbf {Cambridge, UK}\vspace{2mm}\\
+{Part III of the Mathematical Tripos (M.Math.)} & {Oct. 2012 -- Jun. 2013}\vspace{1mm}\\ 
+{B.A. (Hons.) in Natural Sciences} & {Oct. 2009 -- Jun. 2012} 
+\end{tabular*}
+
+%% Prizes and Honours 
+
+\vspace{4.0mm}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Prizes and Honours}}\\
+\hline
+\end{tabular*}\vspace{1.5mm}
+\begin{packed_itemize}
+\item Kusaka Memorial Prize in Physics, Princeton Department of Physics \hfill 2017 \\ \emph{Awarded to physics graduate students who have shown outstanding performance in research and professional promise.}
+
+\item Princeton Graduate School Impact Award \hfill 2016 \\ \emph{Awarded to an individual in the community that has made a difference during their time at Princeton.}
+\item Princeton First-Year Graduate Fellowship \hfill 2013 \\ \emph{Awarded for the first year of graduate study at Princeton.}
+\item Hugo de Balsham Prize  \hfill 2012 \\ \emph{Awarded for exceptional academic distinction at Peterhouse, Cambridge.}
+\item Peter Scheuer Scholarship in Natural Sciences \hfill 2011, 2012 \\ \emph{Awarded for exceptional academic performance in Cambridge second/third year Tripos examinations.}
+\item Senior Academic Scholarship of Peterhouse, Cambridge \hfill 2010\\ \emph{Awarded for exceptional academic performance in Cambridge first year Tripos examinations.}
+\end{packed_itemize}
+
+%% Publications 
+
+\vspace{2.0mm}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Publications}}\\
+\hline
+\vspace{.5mm}
+\end{tabular*}
+\vspace{1.5mm}
+\emph{Authors are usually listed in alphabetical order as per the standard in particle physics.}
+\begin{packed_enumerate}
+
+\item L.J. Chang, M. Lisanti, S. Mishra-Sharma, \emph{A Search for Dark Matter Annihilation in the Milky Way Halo }, \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}, \emph{Submitted for publication}
+
+\item S. Mishra-Sharma, D. Alonso, J. Dunkley, \emph{Neutrino masses and beyond-$\Lambda$CDM cosmology with LSST and future CMB experiments}, \href{https://arxiv.org/abs/1803.07561}{[arXiv:1803.07561]}, \emph{Submitted for publication}
+
+\item DarkSide Collaboration, \emph{Constraints on Sub-GeV Dark Matter-Electron Scattering from the DarkSide-50 Experiment }, \href{https://arxiv.org/abs/1802.06998}{[arXiv:1802.06998]}, \emph{Submitted for publication}
+
+\item DarkSide Collaboration, \emph{Low-Mass Dark Matter Search with the DarkSide-50 Experiment }, \newline \href{https://arxiv.org/abs/1802.06994}{[arXiv:1802.06994]}, \emph{Submitted for publication}
+
+\item R. Bartels, D. Hooper, T. Linden, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, T.R. Slatyer, \emph{Comment on ``Characterizing the population of pulsars in the Galactic bulge with the
+  {\it Fermi} Large Area Telescope'' [arXiv:1705.00009\MakeLowercase{v}1]}, \href{https://www.sciencedirect.com/science/article/pii/S2212686418300268}{Phys.Dark Univ. \textbf{20} (2018) 88-94} \href{https://arxiv.org/abs/1710.10266}{[arXiv:1710.10266]}
+
+\item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{Mapping Extragalactic Dark Matter Annihilation with Galaxy Surveys: A Systematic Study of Stacked Group Searches},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.063005}{Phys.Rev. \textbf{D97} (2018) 063005} \href{https://arxiv.org/abs/1709.00416}{[arXiv:1709.00416]}
+
+\item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{A Search for Dark Matter Annihilation in Galaxy Groups},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.101101}{Phys.Rev.Lett. \textbf{120} (2018) 101101} \href{https://arxiv.org/abs/1708.09385}{[arXiv:1708.09385]}
+
+\item T. Cohen, M. Lisanti, H. K. Lou, S. Mishra-Sharma, \emph{LHC Searches for Dark Sector Showers},  \href{https://link.springer.com/article/10.1007/JHEP11(2017)196}{JHEP \textbf{11}, 196 (2017)}  \href{https://arxiv.org/abs/1707.05326}{ [arXiv:1707.05326]}
+
+
+\item S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{NPTFit: A code package for Non-Poissonian Template Fitting},  \href{http://iopscience.iop.org/article/10.3847/1538-3881/aa6d5f/meta}{Astron.J. \textbf{153} (2017) no.6, 253}  \href{https://arxiv.org/abs/1612.03173}{ [arXiv:1612.03173]}
+
+\item Y. Kahn, G. Krnjaic, S. Mishra-Sharma, T.M.P. Tait, \emph{Light Weakly Coupled Axial Forces: Models, Constraints, and Projections},  \href{https://link.springer.com/article/10.1007%2FJHEP05%282017%29002}{JHEP \textbf{05}, 002 (2017)}  \href{https://arxiv.org/abs/1609.09072}{[arXiv:1609.09072]}
+
+\item M. Lisanti, S. Mishra-Sharma, L. Necib, B.R. Safdi, \emph{Deciphering Contributions to the Extragalactic Gamma-Ray Background from 2 GeV to 2 TeV},  \href{http://iopscience.iop.org/article/10.3847/0004-637X/832/2/117/meta}{Astrophys.J. \textbf{832} (2016) no.2, 117} \href{https://arxiv.org/abs/1606.04101}{[arXiv:1606.04101]}
+
+\item S.K. Lee, M. Lisanti, S. Mishra-Sharma, B.R. Safdi, \emph{Modulation Effects in Dark Matter-Electron Scattering Experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.083517}{Phys.Rev. \textbf{D92} (2015) 083517} \href{https://arxiv.org/abs/1508.07361}{[arXiv:1508.07361]}
+
+\end{packed_enumerate}
+
+%% Talks 
+
+\vspace{2.0mm}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Selected Seminars and Talks}}\\
+\hline
+\end{tabular*}\vspace{1.5mm}
+\begin{packed_itemize}
+\item Near-Field Cosmology with the Dark Energy Survey's DR1 and Beyond \hfill Chicago, IL, Jun. 2018
+\item Particles, Strings and Cosmology (PASCOS) 2018 \hfill Cleveland, OH, Jun. 2018
+\item Recontres de Blois \hfill Blois, France, Jun. 2018
+\item Princeton Astrophysics/IAS Cosmology Lunch Seminar \hfill Princeton, NJ, May 2018
+\item Fermilab Particle Astrophysics Seminar \hfill Batavia, IL, Mar. 2018
+\item Workshop on Statistical Challenges in the Search for Dark Matter \hfill Banff, Canada, Feb. 2018
+\item Accelerating the Search for Dark Matter with Machine Learning \hfill Leiden, Netherlands, Jan. 2018
+\item Maryland Elementary Particle Theory Seminar \hfill College Park, MD, Nov. 2017
+\item Rutgers High Energy Theory Seminar \hfill New Brunswick, NJ, Nov. 2017
+\item Cornell Particle Theory Seminar \hfill Ithaca, NY, Nov. 2017
+\item Caltech Particle Theory Seminar \hfill Pasadena, CA, Oct. 2017
+\item UC Irvine Joint Particle Seminar \hfill Irvine, CA, Oct. 2017
+\item LHC Long-Lived Particles Community Workshop (Remote Talk) \hfill Trieste, Italy, Oct. 2017
+\item Oxford Dalitz Seminar in Fundamental Physics  \hfill Oxford, UK, Oct. 2017
+\item KIPAC Tea Talk  \hfill Stanford, CA, Sep. 2017
+\item UC Santa Cruz Institute for Particle Physics Seminar  \hfill Santa Cruz, CA, Sep. 2017
+\item Berkeley 4D Seminar  \hfill Berkeley, CA, Sep. 2017
+\item Dark Matter, Neutrinos and their Connection (DA$\nu$CO) \hfill Odense, Denmark, Aug. 2017
+\item TeV Particle Astrophysics (TeVPA) 2017 \hfill Columbus, OH, Aug. 2017 
+\item Phenomenology Symposium (Pheno) 2017 \hfill Pittsburgh, PA, May 2017 
+\item Princeton Pheno \& Vino Seminar \hfill Princeton, NJ, Apr. 2017
+\item APS April Meeting 2017 \hfill Washington, DC, Jan. 2017 
+\item MIT BSM Journal Club \hfill Boston, MA, Nov. 2016
+\item TeV Particle Astrophysics (TeVPA) 2016 \hfill Geneva, Switzerland, Sep. 2016 
+\item Gamma Rays and Dark Matter Workshop \hfill Obergurgl, Austria, Dec. 2015
+\item Phenomenology Symposium (Pheno) 2015 \hfill Pittsburgh, PA, May 2015
+\end{packed_itemize}
+
+%% Summer schools 
+
+\vspace{2.0mm}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Summer Schools}}\\
+\hline
+\end{tabular*}\vspace{1.5mm}
+\begin{packed_itemize}
+\item Prospects in Theoretical Physics (PiTP) \hfill Princeton, NJ, Jul. 2017
+\item Theoretical Advanced Study Institude (TASI) \hfill Boulder, CO, Jun. 2016
+\item Tri-Institute Summer School on Elementary Particles (TRISEP) \hfill Waterloo, Canada, Jul. 2015
+\end{packed_itemize}
+
+%% Teaching 
+
+\vspace{2.0mm}
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Teaching Experience}}\\
+\hline
+\vspace{.0mm}
+\end{tabular*}
+\vspace{0.2mm}
+\emph{Course numbers refer to courses taught at Princeton.}
+\begin{packed_itemize}
+\item PHY235 Introduction to Research in Physics \hfill Spring 2018
+\item PHY312 Experimental Physics \hfill Spring 2018
+\item PHY115  Physics for Future Leaders \hfill Fall 2017
+\item PHY104  General Physics II \hfill Spring 2016
+\item PHY406 Nuclear and Elementary Particle Physics \hfill Fall 2015
+\item PHY106 Advanced Physics (Electromagnetism) \hfill Spring 2015
+\item MAT201 Calculus III (Multivariable Calculus) \hfill Fall 2014, 2015
+\item PHY105 Advanced Physics (Mechanics) \hfill Fall 2014
+\end{packed_itemize}
+
+%% Broader impact
+ 
+\vspace{2.0mm}
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Broader Impact}}\\
+\hline
+\end{tabular*}\vspace{1.5mm}
+\begin{packed_itemize}
+\item \emph{Referee}, Phys. Rev. D, Phys. Rev. Lett. \hfill 2017 -- Present
+\item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- Present
+\item \emph{Member}, Princeton Graduate Housing Advisory Board \hfill 2016 -- Present
+\item \emph{Vice Chair}, Princeton Graduate College House Committee \hfill 2016 -- Present
+\item \emph{Subject Representative}, Princeton Graduate Student Government Assembly \hfill 2013 -- 2017
+\item \emph{Organizer}, Princeton Physics Department Open House Committee  \hfill 2015 -- 2016
+\item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- Present
+\end{packed_itemize}
+\vspace{2.0mm}
+
+%% Work Experience
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Research Training}}\\
+\hline
+\end{tabular*}
+
+\begin{packed_itemize}
+\item CERN \hfill Geneva, Switzerland \\ \emph{Visiting Student, CMS Experiment} \hfill Aug. -- Sep. 2012
+\item DAMTP, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Jun. -- Jul. 2012
+\item Institute of Astronomy, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Aug. -- Sep. 2011
+\item CERN \hfill Geneva, Switzerland \\ \emph{Summer Student, CMS Experiment} \hfill Jun. -- Jul. 2011
+
+\end{packed_itemize}
+
+\vspace*{\fill}
+
+\end{document}
