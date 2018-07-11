@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 MAY 2018 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 JUL 2018 16:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -619,12 +619,12 @@ LaTeX Font Info:    ... okay on input line 127.
 * \topmargin=0.0pt
 * \headheight=-28.90755pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -667,7 +667,7 @@ LaTeX Info: Redefining \nameref on input line 127.
 \openout3 = `cv.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 131.
+(Font)              <12> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -677,25 +677,25 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 131.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+mvs on input line 135.
+LaTeX Font Info:    Try loading font information for U+mvs on input line 136.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/marvosym/umvs.fd)
-Underfull \hbox (badness 10000) in alignment at lines 144--147
+Underfull \hbox (badness 10000) in alignment at lines 146--149
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 162--165
+Underfull \hbox (badness 10000) in alignment at lines 164--167
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 192--195
+Underfull \hbox (badness 10000) in alignment at lines 194--197
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 211--215
+Underfull \hbox (badness 10000) in alignment at lines 213--217
 [] 
  []
 
@@ -714,7 +714,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/upd
 map/pdftex.map}]
-Underfull \hbox (badness 10000) in alignment at lines 253--256
+Underfull \hbox (badness 10000) in alignment at lines 255--258
 [] 
  []
 
@@ -723,59 +723,65 @@ Overfull \vbox (28.90755pt too high) has occurred while \output is active []
 
 
 [2]
-Underfull \hbox (badness 10000) in alignment at lines 291--294
+Underfull \hbox (badness 10000) in alignment at lines 293--296
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 305--309
+Underfull \hbox (badness 10000) in alignment at lines 307--311
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 328--331
+Underfull \hbox (badness 10000) in alignment at lines 330--333
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 346--349
+Underfull \hbox (badness 10000) in alignment at lines 348--351
 [] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
 
 Overfull \vbox (28.90755pt too high) has occurred while \output is active []
 
 
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
+Overfull \vbox (28.90755pt too high) has occurred while \output is active []
+
+
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
  (./cv.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 13942 strings out of 493014
- 230772 string characters out of 6133351
- 325643 words of memory out of 5000000
- 17309 multiletter control sequences out of 15000+600000
- 10757 words of font info for 38 fonts, out of 8000000 for 9000
+ 13945 strings out of 493014
+ 230779 string characters out of 6133351
+ 325647 words of memory out of 5000000
+ 17310 multiletter control sequences out of 15000+600000
+ 11051 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,7n,43p,821b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on cv.pdf (3 pages, 118616 bytes).
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on cv.pdf (4 pages, 127220 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 89 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
