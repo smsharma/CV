@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1574260632 "/Users/smsharma/Dropbox/Documents/CV/cv.tex" "/Users/smsharma/Dropbox/Documents/CV/cv.pdf" "cv" 1574260970
-  "/Users/smsharma/Dropbox/Documents/CV/cv.aux" 1574260632 684 7841dc9379a6bd700efc6cb1fef9ffa5 ""
-  "/Users/smsharma/Dropbox/Documents/CV/cv.tex" 1574260691 17191 db99f7102982e8f18c565e7e90e65216 ""
+["pdflatex"] 1574446813 "/Users/smsharma/Dropbox/Documents/CV/cv.tex" "/Users/smsharma/Dropbox/Documents/CV/cv.pdf" "cv" 1574446859
+  "/Users/smsharma/Dropbox/Documents/CV/cv.aux" 1574446813 684 7841dc9379a6bd700efc6cb1fef9ffa5 ""
+  "/Users/smsharma/Dropbox/Documents/CV/cv.tex" 1574446837 17195 e4f90fa3220a2d1ac1dd2d9058b7936e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -77,13 +77,13 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1477785973 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "cv.aux" 1574260632 684 7841dc9379a6bd700efc6cb1fef9ffa5 ""
-  "cv.out" 1574260632 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "cv.tex" 1574260691 17191 db99f7102982e8f18c565e7e90e65216 ""
+  "cv.aux" 1574446813 684 7841dc9379a6bd700efc6cb1fef9ffa5 ""
+  "cv.out" 1574446813 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "cv.tex" 1574446837 17195 e4f90fa3220a2d1ac1dd2d9058b7936e ""
   (generated)
-  "cv.out"
-  "cv.pdf"
   "/Users/smsharma/Dropbox/Documents/CV/cv.log"
   "/Users/smsharma/Dropbox/Documents/CV/cv.pdf"
   "cv.log"
+  "cv.pdf"
   "cv.aux"
+  "cv.out"
