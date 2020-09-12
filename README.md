@@ -1,3 +1,3 @@
 # CV
 
-My LaTeX CV.
+LaTeX CV.
