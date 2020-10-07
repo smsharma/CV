@@ -10,6 +10,7 @@
 \usepackage{textcomp}
 \usepackage{fancyhdr}
 \usepackage{fontawesome}
+\usepackage{enumitem}
 
 \newcommand\myshade{85}
 \colorlet{linkcolor}{Maroon}
@@ -75,7 +76,7 @@
 \makeatother
 
 \newenvironment{packed_itemize}{
-\begin{itemize}
+\begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
   \setlength{\itemsep}{3pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{itemize}
@@ -123,8 +124,8 @@
 
 % &\
 &\faEnvelopeO\hspace{1mm}\href{mailto:sm8383@nyu.edu}{\texttt{sm8383@nyu.edu}} 
+~\faGlobe\hspace{1mm}\href{https://smsharma.github.io}{\texttt{smsharma.github.io}} 
 ~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 609-933-0103} 
-~\faGlobe\hspace{1mm}\href{smsharma.github.io}{\texttt{smsharma.github.io}} 
 % ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &
 \vspace{0.5mm}
 \\ 
@@ -286,21 +287,20 @@ Contributions to white papers and as part of large collaborations:
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Seminars and Conference Talks}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{3.5mm}
+
+\noindent
+Invited talks:
 \begin{packed_itemize}
 \item BSM PANDEMIC Seminar (Remote talk) \hfill Nov. 2020
 \item SLAC Elementary Particle Physics Seminar (Remote talk) \hfill Jul. 2020
 \item University of Amsterdam GRAPPA Colloquium (Remote talk) \hfill May 2020
 \item Princeton Pheno \& Vino Seminar (Remote talk) \hfill Apr. 2020
 \item CERN-TH BSH Forum (Remote talk) \hfill  Apr. 2020
-\item Machine Learning for Astrophysicists Seminar (Remote talk at \href{https://docs.google.com/document/d/1GGtE-YIuAWlmpKSr38_kyiF-Fklszhkh4FkiYWzBAho/pub}{mlclub.net}) \hfill Mar. 2020
-\item WFIRST Science Meeting (Flatiron Institute) \hfill New York, NY, Mar. 2020
+\item Machine Learning for Astrophysicists Seminar \href{https://docs.google.com/document/d/1GGtE-YIuAWlmpKSr38_kyiF-Fklszhkh4FkiYWzBAho/pub}{\texttt{mlclub.net}} (Remote talk) \hfill Mar. 2020
 \item Michigan LCTP Brown Bag Seminar \hfill Ann Arbor, MI, Jan. 2020
 \item Stony Brook University Particle Physics Seminar \hfill Stony Brook, NY, Nov. 2019
 \item Minnesota High Energy Theory Lunchtime Seminar \hfill  Minneapolis, MN, Nov. 2019
-\item LSST Dark Matter Workshop \hfill Chicago, IL, Aug. 2019
-\item SUSY 2019 \hfill Corpus Christi, TX, May 2019
-\item Phenomenology Symposium (Pheno) 2019 \hfill Pittsburgh, PA, May 2019
 \item Brown Astrophysics Seminar Series \hfill Providence, RI, May 2019
 \item NYU CCPP Brown Bag Seminar \hfill New York, NY, Apr. 2019
 \item Particles, Strings and Cosmology (PASCOS) 2018 \hfill Cleveland, OH, Jun. 2018
@@ -318,18 +318,28 @@ Contributions to white papers and as part of large collaborations:
 \item KIPAC Tea Talk  \hfill Stanford, CA, Sep. 2017
 \item UC Santa Cruz Institute for Particle Physics Seminar  \hfill Santa Cruz, CA, Sep. 2017
 \item Berkeley 4D Seminar  \hfill Berkeley, CA, Sep. 2017
-\item Dark Matter, Neutrinos and their Connection (DA$\nu$CO) \hfill Odense, Denmark, Aug. 2017
-\item TeV Particle Astrophysics (TeVPA) 2017 \hfill Columbus, OH, Aug. 2017 
-\item Phenomenology Symposium (Pheno) 2017 \hfill Pittsburgh, PA, May 2017 
 \item Princeton Pheno \& Vino Seminar \hfill Princeton, NJ, Apr. 2017
-\item APS April Meeting 2017 \hfill Washington, DC, Jan. 2017 
 \item MIT BSM Journal Club \hfill Boston, MA, Nov. 2016
-\item TeV Particle Astrophysics (TeVPA) 2016 \hfill Geneva, Switzerland, Sep. 2016 
-\item Gamma Rays and Dark Matter Workshop \hfill Obergurgl, Austria, Dec. 2015
-\item Phenomenology Symposium (Pheno) 2015 \hfill Pittsburgh, PA, May 2015
 \end{packed_itemize}
 
-\newpage
+\noindent
+Contributed talks:
+\begin{packed_itemize}
+  \item WFIRST Science Meeting (Flatiron Institute) \hfill New York, NY, Mar. 2020
+  \item LSST Dark Matter Workshop \hfill Chicago, IL, Aug. 2019
+  \item SUSY 2019 \hfill Corpus Christi, TX, May 2019
+  \item Phenomenology Symposium (Pheno) 2019 \hfill Pittsburgh, PA, May 2019
+  \item Dark Matter, Neutrinos and their Connection (DA$\nu$CO) \hfill Odense, Denmark, Aug. 2017
+  \item TeV Particle Astrophysics (TeVPA) 2017 \hfill Columbus, OH, Aug. 2017 
+  \item Phenomenology Symposium (Pheno) 2017 \hfill Pittsburgh, PA, May 2017 
+  \item APS April Meeting 2017 \hfill Washington, DC, Jan. 2017 
+  \item TeV Particle Astrophysics (TeVPA) 2016 \hfill Geneva, Switzerland, Sep. 2016 
+  \item Gamma Rays and Dark Matter Workshop \hfill Obergurgl, Austria, Dec. 2015
+  \item Phenomenology Symposium (Pheno) 2015 \hfill Pittsburgh, PA, May 2015
+  
+\end{packed_itemize}
+
+% \newpage
 
 %% Summer schools and workshops
 
@@ -382,7 +392,7 @@ Contributions to white papers and as part of large collaborations:
 \hline
 \end{tabular*}\vspace{1.5mm}
 \begin{packed_itemize}
-\item \emph{Reviewer}, Phys.Rev. \textbf{D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop
+\item \emph{Reviewer}, Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop
 \item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
 % \item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- 2018
 % \item \emph{Member}, Princeton Graduate Housing Advisory Board \hfill 2016 -- 2018
@@ -411,6 +421,24 @@ Contributions to white papers and as part of large collaborations:
 \item CERN \hfill Geneva, Switzerland \\ \emph{Summer Student, CMS Experiment} \hfill Jun. -- Jul. 2011
 
 \end{packed_itemize}
+
+%% Work Experience
+
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{References}}\\
+\hline
+\end{tabular*}
+
+\begin{packed_itemize}
+  \item Mariangela Lisanti (Princeton University) \hfill \href{mailto:mlisanti@princeton.edu}{\texttt{mlisanti@princeton.edu}}
+  \item Neal Weiner (New York University) \hfill \href{mailto:neal.weiner@nyu.edu}{\texttt{neal.weiner@nyu.edu}}
+  \item Kyle Cranmer (New York University) \hfill \href{mailto:kyle.cranmer@nyu.edu}{\texttt{kyle.cranmer@nyu.edu}}
+  \item Joshua Ruderman (New York University) \hfill \href{mailto:ruderman@nyu.edu}{\texttt{ruderman@nyu.edu}}
+  \item Christoph Weniger (University of Amsterdam) \hfill \href{mailto:c.weniger@uva.nl}{\texttt{c.weniger@uva.nl}}
+
+\end{packed_itemize}
+
 
 \vspace*{\fill}
 
