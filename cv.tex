@@ -71,10 +71,12 @@
 \setlength{\tabcolsep}{0in}
 \hyphenchar\font=-1
 
+% Change bullet size
 \makeatletter
 \renewcommand\@biblabel[1]{\textbullet}
 \makeatother
 
+% Packed itemize environment
 \newenvironment{packed_itemize}{
 \begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
   \setlength{\itemsep}{3pt}
@@ -82,12 +84,14 @@
   \setlength{\parsep}{0pt}}{\end{itemize}
 }
 
+% Packed enumerate environment
 \newenvironment{packed_enumerate}[1][]{
 \begin{etaremune}[#1]
   \setlength{\itemsep}{3pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{etaremune}
 }
+
 %-----------------------------------------------------------
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
 \newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}}
@@ -296,7 +300,7 @@ Invited talks:
 \item SLAC Elementary Particle Physics Seminar (Remote talk) \hfill Jul. 2020
 \item University of Amsterdam GRAPPA Colloquium (Remote talk) \hfill May 2020
 \item Princeton Pheno \& Vino Seminar (Remote talk) \hfill Apr. 2020
-\item CERN-TH BSH Forum (Remote talk) \hfill  Apr. 2020
+\item CERN-TH BSM Forum (Remote talk) \hfill  Apr. 2020
 \item Machine Learning for Astrophysicists Seminar \href{https://docs.google.com/document/d/1GGtE-YIuAWlmpKSr38_kyiF-Fklszhkh4FkiYWzBAho/pub}{\texttt{mlclub.net}} (Remote talk) \hfill Mar. 2020
 \item Michigan LCTP Brown Bag Seminar \hfill Ann Arbor, MI, Jan. 2020
 \item Stony Brook University Particle Physics Seminar \hfill Stony Brook, NY, Nov. 2019
