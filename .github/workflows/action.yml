@@ -10,11 +10,9 @@ jobs:
       LATEX: pdflatex -shell-escape
     steps: 
     - uses: actions/checkout@v1
-    - name: Update apt-get
-      run: |
-	sudo apt-get update
     - name: Install texlive
       run: |
+        sudo apt-get update
         sudo apt-get install texlive-publishers \
                              texlive-latex-recommended \
                              texlive-latex-extra \
