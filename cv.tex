@@ -11,6 +11,12 @@
 \usepackage{fancyhdr}
 \usepackage{fontawesome}
 \usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\usepackage{catchfile}
+
+%%%%%%%%%%%%
+% Link colour
 
 \newcommand\myshade{85}
 \colorlet{linkcolor}{Maroon}
@@ -19,7 +25,7 @@
 
 %%%%%%%%%%%%
 % PDF setup
-\usepackage{ifpdf}
+
 \ifpdf
   \usepackage[pdftex]{hyperref}
 \else
@@ -36,6 +42,25 @@
     pdfsubject={Siddharth Mishra-Sharma's CV},
     pdfkeywords={}
 }
+
+%%%%%%%%%%%%
+% Toggle for printing phone number
+
+% Get environmental variable ENV
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
+\getenv[\ENV]{ENV}
+
+% Print phone number ONLY if not compiling online GitHub version
+\ifthenelse{\equal{\ENV}{GIT}}
+  {
+   \newcommand{\phone}{}%
+  }
+  {
+   \newcommand{\phone}{~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 609-933-0103} }%
+  }
 %%%%%%%%%%%%
 
 %%%%%%%%%%%%
@@ -49,17 +74,6 @@
 %\footheight 1.0in 
 %%%%%%%%%%%%
 
-%%Custom commands
-%
-%% In case you need to adjust margins:
-%%\topmargin=-0.5in      
-%\evensidemargin=-0.5in     
-%\oddsidemargin=-0.5in      
-%\textwidth=7.2in        
-%%\textheight=9.9in       
-%\headsep=0.25in         
-%
-%
 %% Setup the header and footer
 %\pagestyle{fancy}                                                      
 %\cfoot{Page\ \thepage\ of\ 2}                                                               
@@ -120,16 +134,17 @@
 
 \begin{document}
 
+%%%%%%%%%%%%
 %% Heading
+
 \begin{center}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
 &\huge{\textbf{\sc{Siddharth Mishra-Sharma}}}&   \\
 & 726 Broadway, New York, NY 10003, USA &\\
 
-% &\
 &\faEnvelopeO\hspace{1mm}\href{mailto:sm8383@nyu.edu}{\texttt{sm8383@nyu.edu}} 
 ~\faGlobe\hspace{1mm}\href{https://smsharma.github.io}{\texttt{smsharma.github.io}} 
-%~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 609-933-0103} 
+\phone
 % ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &
 \vspace{0.5mm}
 \\ 
@@ -141,12 +156,17 @@
 
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
 %% Appointments 
+
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Academic Appointments}}\\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}
+
 % NYU
 \noindent 
 \\
@@ -157,12 +177,15 @@
 \end{tabular*}
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
 %% Education 
+
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Education}}\\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}
+
 % Princeton
 \noindent 
 \\
@@ -180,32 +203,38 @@
 \\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{University of Cambridge}  & \textbf {Cambridge, UK}\vspace{1mm}\\
-{Part III of the Mathematical Tripos (M.Math.)} & {Oct. 2012 -- Jun. 2013}\vspace{0.2mm}\\ 
+{Part III of the Mathematical Tripos (M.Math.)} & {Oct. 2012 -- Jun. 2013}\vspace{0.0mm}\\ 
 % \small{\emph{Specializing in Theoretical Physics}}\vspace{1mm}\\
 {B.A. (Hons.) in Natural Sciences (Physical)} & {Oct. 2009 -- Jun. 2012} \\
 % \small{\emph{Specializing in Physics}}\vspace{1mm}\\
 \end{tabular*}
 %\small{M.A. (Cantab) awarded in May 2016. \small{\emph{Note that this is an academic rank that may be given six years after the end of a first term at the University of Cambridge, and is not a postgraduate qualification.}}}\vspace{0mm}\\
 \vspace{2.0mm}
+%%%%%%%%%%%%
 
+%%%%%%%%%%%%
 %% Prizes and Honours 
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Prizes and Honours}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{1.mm}
+
 \begin{packed_itemize}
-\item Department Teaching Award, Princeton Department of Physics  \hfill 2018 \\ \emph{Awarded for excellence in the role of Assistant in Instruction for courses taught at Princeton.}
-\item Kusaka Memorial Prize in Physics, Princeton Department of Physics \hfill 2017 \\ \emph{Awarded to physics graduate students who have shown outstanding performance in research and professional promise.}
-\item Princeton Graduate School Impact Award \hfill 2016 \\ \emph{Awarded to an individual in the community that has made a difference during their time at Princeton.}
-\item Princeton First-Year Graduate Fellowship \hfill 2013 \\ \emph{Awarded for the first year of graduate study at Princeton.}
-\item Hugo de Balsham Prize  \hfill 2012 \\ \emph{Awarded for exceptional academic distinction at Peterhouse, Cambridge.}
-\item Peter Scheuer Scholarship in Natural Sciences \hfill 2011, 2012 \\ \emph{Awarded for exceptional academic performance in Cambridge second/third year Tripos examinations.}
-\item Senior Academic Scholarship of Peterhouse, Cambridge \hfill 2010\\ \emph{Awarded for exceptional academic performance in Cambridge first year Tripos examinations.}
+  \item Department Teaching Award, Princeton Department of Physics  \hfill 2018 \\ \emph{Awarded for excellence in the role of Assistant in Instruction for courses taught at Princeton.}
+  \item Kusaka Memorial Prize in Physics, Princeton Department of Physics \hfill 2017 \\ \emph{Awarded to physics graduate students who have shown outstanding performance in research and professional promise.}
+  \item Princeton Graduate School Impact Award \hfill 2016 \\ \emph{Awarded to an individual in the community that has made a difference during their time at Princeton.}
+  \item Princeton First-Year Graduate Fellowship \hfill 2013 \\ \emph{Awarded for the first year of graduate study at Princeton.}
+  \item Hugo de Balsham Prize  \hfill 2012 \\ \emph{Awarded for exceptional academic distinction at Peterhouse, Cambridge.}
+  \item Peter Scheuer Scholarship in Natural Sciences \hfill 2011, 2012 \\ \emph{Awarded for exceptional academic performance in Cambridge second/third year Tripos examinations.}
+  \item Senior Academic Scholarship of Peterhouse, Cambridge \hfill 2010\\ \emph{Awarded for exceptional academic performance in Cambridge first year Tripos examinations.}
 \end{packed_itemize}
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
 %% Publications 
 
 \noindent
@@ -213,106 +242,110 @@
 \large {\sc \Large{Publications}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
+
 \noindent
 Primary contributions \emph{(Note: except where indicated with an asterisk\,$^*$, authors are listed in alphabetical order as per the standard in particle physics)}:
 
 \begin{packed_enumerate}[start=24]
-\item $^*$S. Mishra-Sharma and K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, \href{https://ml4physicalsciences.github.io/2019/}{Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020) } \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
+  \item $^*$S. Mishra-Sharma and K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, \href{https://ml4physicalsciences.github.io/2019/}{Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020) } \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
 
-\item A. Caputo, H. Liu, S. Mishra-Sharma, M. Pospelov, J.T. Ruderman, A. Urbano, \emph{Edges and Endpoints in 21-cm Observations from Resonant Photon Production}, under review in Phys.Rev.Lett. \href{https://arxiv.org/abs/2009.03899}{[arXiv:2009.03899]}
+  \item A. Caputo, H. Liu, S. Mishra-Sharma, M. Pospelov, J.T. Ruderman, A. Urbano, \emph{Edges and Endpoints in 21-cm Observations from Resonant Photon Production}, under review in Phys.Rev.Lett. \href{https://arxiv.org/abs/2009.03899}{[arXiv:2009.03899]}
 
-\item $^*$J.J. Somalwar, L.J. Chang, S. Mishra-Sharma, M. Lisanti, \emph{Harnessing the Population Statistics of Subhalos to Search for Annihilating Dark Matter}, accepted to Astrophys.J. \href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
+  \item $^*$J.J. Somalwar, L.J. Chang, S. Mishra-Sharma, M. Lisanti, \emph{Harnessing the Population Statistics of Subhalos to Search for Annihilating Dark Matter}, accepted to Astrophys.J. \href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
 
-\item A. Caputo, H. Liu, S. Mishra-Sharma, J.T. Ruderman, \emph{Modeling Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.103533}{Phys.Rev. \textbf{D102} (2020) 103533}   \href{https://arxiv.org/abs/2004.06733}{[arXiv:2004.06733]}
+  \item A. Caputo, H. Liu, S. Mishra-Sharma, J.T. Ruderman, \emph{Modeling Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.103533}{Phys.Rev. \textbf{D102} (2020) 103533}   \href{https://arxiv.org/abs/2004.06733}{[arXiv:2004.06733]}
 
-\item S. Mishra-Sharma, K. Van Tilburg, N. Weiner, \emph{Power of Halometry}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023026}{Phys.Rev. \textbf{D102} (2020) 023026} [Editors' Suggestion and Featured in \emph{Physics}; \href{https://physics.aps.org/articles/v13/s98}{Synopsis}]  \href{https://arxiv.org/abs/2003.02264}{[arXiv:2003.02264]}
+  \item S. Mishra-Sharma, K. Van Tilburg, N. Weiner, \emph{Power of Halometry}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023026}{Phys.Rev. \textbf{D102} (2020) 023026} [Editors' Suggestion and Featured in \emph{Physics}; \href{https://physics.aps.org/articles/v13/s98}{Synopsis}]  \href{https://arxiv.org/abs/2003.02264}{[arXiv:2003.02264]}
 
-\item $^*$M. Buschmann, N.L. Rodd, B.R. Safdi, L.J. Chang, S. Mishra-Sharma, M. Lisanti, O. Macias \emph{Foreground Mismodeling and the Point Source Explanation of the Fermi Galactic Center Excess},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023023}{Phys.Rev. \textbf{D102} (2020) 023023} \href{https://arxiv.org/abs/2002.12373}{[arXiv:2002.12373]} 
+  \item $^*$M. Buschmann, N.L. Rodd, B.R. Safdi, L.J. Chang, S. Mishra-Sharma, M. Lisanti, O. Macias \emph{Foreground Mismodeling and the Point Source Explanation of the Fermi Galactic Center Excess},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023023}{Phys.Rev. \textbf{D102} (2020) 023023} \href{https://arxiv.org/abs/2002.12373}{[arXiv:2002.12373]} 
 
-\item A. Caputo, H. Liu, S. Mishra-Sharma, J.T. Ruderman, \emph{Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.221303}{Phys.Rev.Lett. \textbf{125} (2020) 221303}  \href{https://arxiv.org/abs/2002.05165}{[arXiv:2002.05165]}
+  \item A. Caputo, H. Liu, S. Mishra-Sharma, J.T. Ruderman, \emph{Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.221303}{Phys.Rev.Lett. \textbf{125} (2020) 221303}  \href{https://arxiv.org/abs/2002.05165}{[arXiv:2002.05165]}
 
-\item $^*$J. Brehmer, K. Cranmer, S. Mishra-Sharma, F. Kling, G. Louppe,  \emph{Mining gold: Improving simulation-based inference with latent information}, \href{https://ml4physicalsciences.github.io/2019/}{Machine Learning and the Physical Sciences Workshop at the 33rd Conference on Neural Information Processing Systems (NeurIPS 2019)} \href{https://ml4physicalsciences.github.io/files/NeurIPS_ML4PS_2019_16.pdf}{[Paper]}
+  \item $^*$J. Brehmer, K. Cranmer, S. Mishra-Sharma, F. Kling, G. Louppe,  \emph{Mining gold: Improving simulation-based inference with latent information}, \href{https://ml4physicalsciences.github.io/2019/}{Machine Learning and the Physical Sciences Workshop at the 33rd Conference on Neural Information Processing Systems (NeurIPS 2019)} \href{https://ml4physicalsciences.github.io/files/NeurIPS_ML4PS_2019_16.pdf}{[Paper]}
 
-\item $^{*\dagger}$J. Brehmer, $^\dagger$S. Mishra-Sharma, J. Hermans, G. Louppe, K. Cranmer, \emph{Mining for Dark Matter Substructure: Inferring subhalo population properties from strong lenses with machine learning}, \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab4c41}{Astrophys.J. \textbf{886} (2019) no.1, 49} \href{https://arxiv.org/abs/1909.02005}{[arXiv:1909.02005]} ($^\dagger$\emph{Equal contribution})
+  \item $^{*\dagger}$J. Brehmer, $^\dagger$S. Mishra-Sharma, J. Hermans, G. Louppe, K. Cranmer, \emph{Mining for Dark Matter Substructure: Inferring subhalo population properties from strong lenses with machine learning}, \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab4c41}{Astrophys.J. \textbf{886} (2019) no.1, 49} \href{https://arxiv.org/abs/1909.02005}{[arXiv:1909.02005]} ($^\dagger$\emph{Equal contribution})
 
-\item $^*$L.J. Chang, S. Mishra-Sharma, M. Lisanti, M. Buschmann, N.L. Rodd, B.R. Safdi, \emph{Characterizing the Nature of the Unresolved Point Sources in the Galactic Center: An Assessment of Systematic Uncertainties},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.023014}{Phys.Rev. \textbf{D101} (2020) 023014} \href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}, 
+  \item $^*$L.J. Chang, S. Mishra-Sharma, M. Lisanti, M. Buschmann, N.L. Rodd, B.R. Safdi, \emph{Characterizing the Nature of the Unresolved Point Sources in the Galactic Center: An Assessment of Systematic Uncertainties},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.023014}{Phys.Rev. \textbf{D101} (2020) 023014} \href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}, 
 
-\item L.J. Chang, M. Lisanti, S. Mishra-Sharma, \emph{Search for Dark Matter Annihilation in the Milky Way Halo}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.123004}{Phys.Rev. \textbf{D98} (2018) 123004} \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}
+  \item L.J. Chang, M. Lisanti, S. Mishra-Sharma, \emph{Search for Dark Matter Annihilation in the Milky Way Halo}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.123004}{Phys.Rev. \textbf{D98} (2018) 123004} \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}
 
-\item $^*$S. Mishra-Sharma, D. Alonso, J. Dunkley, \emph{Neutrino masses and beyond-$\Lambda$CDM cosmology with LSST and future CMB experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.123544}{Phys.Rev. \textbf{D97} (2018) 123544}  \href{https://arxiv.org/abs/1803.07561}{[arXiv:1803.07561]}
+  \item $^*$S. Mishra-Sharma, D. Alonso, J. Dunkley, \emph{Neutrino masses and beyond-$\Lambda$CDM cosmology with LSST and future CMB experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.123544}{Phys.Rev. \textbf{D97} (2018) 123544}  \href{https://arxiv.org/abs/1803.07561}{[arXiv:1803.07561]}
 
-\item R. Bartels, D. Hooper, T. Linden, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, T.R. Slatyer, \emph{Comment on ``Characterizing the population of pulsars in the Galactic bulge with the
-{\it Fermi} Large Area Telescope'' [arXiv:1705.00009\MakeLowercase{v}1]}, \href{https://www.sciencedirect.com/science/article/pii/S2212686418300268}{Phys.Dark Univ. \textbf{20} (2018) 88-94} \href{https://arxiv.org/abs/1710.10266}{[arXiv:1710.10266]}
+  \item R. Bartels, D. Hooper, T. Linden, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, T.R. Slatyer, \emph{Comment on ``Characterizing the population of pulsars in the Galactic bulge with the
+  {\it Fermi} Large Area Telescope'' [arXiv:1705.00009\MakeLowercase{v}1]}, \href{https://www.sciencedirect.com/science/article/pii/S2212686418300268}{Phys.Dark Univ. \textbf{20} (2018) 88-94} \href{https://arxiv.org/abs/1710.10266}{[arXiv:1710.10266]}
 
-\item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{Mapping Extragalactic Dark Matter Annihilation with Galaxy Surveys: A Systematic Study of Stacked Group Searches},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.063005}{Phys.Rev. \textbf{D97} (2018) 063005} \href{https://arxiv.org/abs/1709.00416}{[arXiv:1709.00416]}
+  \item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{Mapping Extragalactic Dark Matter Annihilation with Galaxy Surveys: A Systematic Study of Stacked Group Searches},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.063005}{Phys.Rev. \textbf{D97} (2018) 063005} \href{https://arxiv.org/abs/1709.00416}{[arXiv:1709.00416]}
 
-\item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{Search for Dark Matter Annihilation in Galaxy Groups},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.101101}{Phys.Rev.Lett. \textbf{120} (2018) 101101} \href{https://arxiv.org/abs/1708.09385}{[arXiv:1708.09385]}
+  \item M. Lisanti, S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{Search for Dark Matter Annihilation in Galaxy Groups},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.101101}{Phys.Rev.Lett. \textbf{120} (2018) 101101} \href{https://arxiv.org/abs/1708.09385}{[arXiv:1708.09385]}
 
-\item T. Cohen, M. Lisanti, H. K. Lou, S. Mishra-Sharma, \emph{LHC Searches for Dark Sector Showers},  \href{https://link.springer.com/article/10.1007/JHEP11(2017)196}{JHEP \textbf{11}, 196 (2017)}  \href{https://arxiv.org/abs/1707.05326}{ [arXiv:1707.05326]}
+  \item T. Cohen, M. Lisanti, H. K. Lou, S. Mishra-Sharma, \emph{LHC Searches for Dark Sector Showers},  \href{https://link.springer.com/article/10.1007/JHEP11(2017)196}{JHEP \textbf{11}, 196 (2017)}  \href{https://arxiv.org/abs/1707.05326}{ [arXiv:1707.05326]}
 
-\item S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{NPTFit: A code package for Non-Poissonian Template Fitting},  \href{http://iopscience.iop.org/article/10.3847/1538-3881/aa6d5f/meta}{Astron.J. \textbf{153} (2017) no.6, 253}  \href{https://arxiv.org/abs/1612.03173}{ [arXiv:1612.03173]}
+  \item S. Mishra-Sharma, N.L. Rodd, B.R. Safdi, \emph{NPTFit: A code package for Non-Poissonian Template Fitting},  \href{http://iopscience.iop.org/article/10.3847/1538-3881/aa6d5f/meta}{Astron.J. \textbf{153} (2017) no.6, 253}  \href{https://arxiv.org/abs/1612.03173}{ [arXiv:1612.03173]}
 
-\item Y. Kahn, G. Krnjaic, S. Mishra-Sharma, T.M.P. Tait, \emph{Light Weakly Coupled Axial Forces: Models, Constraints, and Projections},  \href{https://link.springer.com/article/10.1007%2FJHEP05%282017%29002}{JHEP \textbf{05}, 002 (2017)}  \href{https://arxiv.org/abs/1609.09072}{[arXiv:1609.09072]}
+  \item Y. Kahn, G. Krnjaic, S. Mishra-Sharma, T.M.P. Tait, \emph{Light Weakly Coupled Axial Forces: Models, Constraints, and Projections},  \href{https://link.springer.com/article/10.1007%2FJHEP05%282017%29002}{JHEP \textbf{05}, 002 (2017)}  \href{https://arxiv.org/abs/1609.09072}{[arXiv:1609.09072]}
 
-\item M. Lisanti, S. Mishra-Sharma, L. Necib, B.R. Safdi, \emph{Deciphering Contributions to the Extragalactic Gamma-Ray Background from 2 GeV to 2 TeV},  \href{http://iopscience.iop.org/article/10.3847/0004-637X/832/2/117/meta}{Astrophys.J. \textbf{832} (2016) no.2, 117} \href{https://arxiv.org/abs/1606.04101}{[arXiv:1606.04101]}
+  \item M. Lisanti, S. Mishra-Sharma, L. Necib, B.R. Safdi, \emph{Deciphering Contributions to the Extragalactic Gamma-Ray Background from 2 GeV to 2 TeV},  \href{http://iopscience.iop.org/article/10.3847/0004-637X/832/2/117/meta}{Astrophys.J. \textbf{832} (2016) no.2, 117} \href{https://arxiv.org/abs/1606.04101}{[arXiv:1606.04101]}
 
-\item S.K. Lee, M. Lisanti, S. Mishra-Sharma, B.R. Safdi, \emph{Modulation Effects in Dark Matter-Electron Scattering Experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.083517}{Phys.Rev. \textbf{D92} (2015) 083517} \href{https://arxiv.org/abs/1508.07361}{[arXiv:1508.07361]}
+  \item S.K. Lee, M. Lisanti, S. Mishra-Sharma, B.R. Safdi, \emph{Modulation Effects in Dark Matter-Electron Scattering Experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.083517}{Phys.Rev. \textbf{D92} (2015) 083517} \href{https://arxiv.org/abs/1508.07361}{[arXiv:1508.07361]}
 \end{packed_enumerate}
 
 \noindent
 Contributions to white papers and as part of larger collaborations:
 
 \begin{packed_enumerate}[start=4]
-\item J. Alimena \emph{et al.}, \emph{Searching for long-lived particles beyond the Standard Model at the Large Hadron Collider}  \href{https://iopscience.iop.org/article/10.1088/1361-6471/ab4574}{J.Phys.G 47 (2020) 090501} \href{https://arxiv.org/abs/1903.04497}{[arXiv:1903.04497]}, 
+  \item J. Alimena \emph{et al.}, \emph{Searching for long-lived particles beyond the Standard Model at the Large Hadron Collider}  \href{https://iopscience.iop.org/article/10.1088/1361-6471/ab4574}{J.Phys.G 47 (2020) 090501} \href{https://arxiv.org/abs/1903.04497}{[arXiv:1903.04497]}, 
 
-\item S. Algeri \emph{et al.}, \emph{Statistical challenges in the search for dark matter} \href{https://arxiv.org/abs/1807.09273}{[arXiv:1807.09273]}
+  \item S. Algeri \emph{et al.}, \emph{Statistical challenges in the search for dark matter} \href{https://arxiv.org/abs/1807.09273}{[arXiv:1807.09273]}
 
-\item DarkSide Collaboration, \emph{Constraints on Sub-GeV Dark Matter-Electron Scattering from the DarkSide-50 Experiment}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.111303}{Phys.Rev.Lett. \textbf{121} (2018) 111303} \href{https://arxiv.org/abs/1802.06998}{[arXiv:1802.06998]}
+  \item DarkSide Collaboration, \emph{Constraints on Sub-GeV Dark Matter-Electron Scattering from the DarkSide-50 Experiment}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.111303}{Phys.Rev.Lett. \textbf{121} (2018) 111303} \href{https://arxiv.org/abs/1802.06998}{[arXiv:1802.06998]}
 
-\item DarkSide Collaboration, \emph{Low-Mass Dark Matter Search with the DarkSide-50 Experiment}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.081307}{Phys.Rev.Lett. \textbf{121} (2018) 081307}  \href{https://arxiv.org/abs/1802.06994}{[arXiv:1802.06994]}
+  \item DarkSide Collaboration, \emph{Low-Mass Dark Matter Search with the DarkSide-50 Experiment}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.081307}{Phys.Rev.Lett. \textbf{121} (2018) 081307}  \href{https://arxiv.org/abs/1802.06994}{[arXiv:1802.06994]}
 \end{packed_enumerate}
 \vspace{2.0mm}
 
-%% Talks 
+%%%%%%%%%%%%
 
+%%%%%%%%%%%%
+%% Talks 
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Seminars and Conference Talks}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
+
 \noindent
 Invited talks:
 \begin{packed_itemize}
-\item Carnegie Observatories ``Lunch Talk'' Seminar (Remote talk) \hfill Feb. 2020
-\item BSM PANDEMIC Seminar \href{https://www.bsmpandemic.com/ }{\texttt{bsmpandemic.com}} (Remote talk) \hfill Nov. 2020
-\item SLAC Elementary Particle Physics Seminar (Remote talk) \hfill Jul. 2020
-\item University of Amsterdam GRAPPA Colloquium (Remote talk) \hfill May 2020
-\item Princeton Pheno \& Vino Seminar (Remote talk) \hfill Apr. 2020
-\item CERN-TH BSM Forum (Remote talk) \hfill  Apr. 2020
-\item Machine Learning for Astrophysicists Seminar \href{https://docs.google.com/document/d/1GGtE-YIuAWlmpKSr38_kyiF-Fklszhkh4FkiYWzBAho/pub}{\texttt{mlclub.net}} (Remote talk) \hfill  Mar. 2020
-\item Michigan LCTP Brown Bag Seminar \hfill Ann Arbor, MI, Jan. 2020
-\item Stony Brook University Particle Physics Seminar \hfill Stony Brook, NY, Nov. 2019
-\item Minnesota High Energy Theory Lunchtime Seminar \hfill  Minneapolis, MN, Nov. 2019
-\item Brown Astrophysics Seminar Series \hfill Providence, RI, May 2019
-\item NYU CCPP Brown Bag Seminar \hfill New York, NY, Apr. 2019
-\item Particles, Strings and Cosmology (PASCOS) 2018 \hfill Cleveland, OH, Jun. 2018
-\item Recontres de Blois 2018 \hfill Blois, France, Jun. 2018
-\item Princeton Astrophysics/IAS Cosmology Lunch Seminar \hfill Princeton, NJ, May 2018
-\item Fermilab Particle Astrophysics Seminar \hfill Batavia, IL, Mar. 2018
-\item Workshop on Statistical Challenges in the Search for Dark Matter \hfill Banff, Canada, Feb. 2018
-\item Maryland Elementary Particle Theory Seminar \hfill College Park, MD, Nov. 2017
-\item Rutgers High Energy Theory Seminar \hfill New Brunswick, NJ, Nov. 2017
-\item Cornell Particle Theory Seminar \hfill Ithaca, NY, Nov. 2017
-\item Caltech Particle Theory Seminar \hfill Pasadena, CA, Oct. 2017
-\item UC Irvine Joint Particle Seminar \hfill Irvine, CA, Oct. 2017
-\item ICTP LHC Long-Lived Particles Community Workshop (Remote talk) \hfill Oct. 2017
-\item Oxford Dalitz Seminar in Fundamental Physics  \hfill Oxford, UK, Oct. 2017
-\item KIPAC Tea Talk  \hfill Stanford, CA, Sep. 2017
-\item UC Santa Cruz Institute for Particle Physics Seminar  \hfill Santa Cruz, CA, Sep. 2017
-\item Berkeley 4D Seminar  \hfill Berkeley, CA, Sep. 2017
-\item Princeton Pheno \& Vino Seminar \hfill Princeton, NJ, Apr. 2017
-\item MIT BSM Journal Club \hfill Boston, MA, Nov. 2016
+  \item Carnegie Observatories ``Lunch Talk'' Seminar (Remote talk) \hfill Feb. 2020
+  \item BSM PANDEMIC Seminar  (Remote talk at \href{https://www.bsmpandemic.com/ }{\texttt{bsmpandemic.com}}) \hfill Nov. 2020
+  \item SLAC Elementary Particle Physics Seminar (Remote talk) \hfill Jul. 2020
+  \item University of Amsterdam GRAPPA Colloquium (Remote talk) \hfill May 2020
+  \item Princeton Pheno \& Vino Seminar (Remote talk) \hfill Apr. 2020
+  \item CERN-TH BSM Forum (Remote talk) \hfill  Apr. 2020
+  \item Machine Learning for Astrophysicists Seminar (Remote talk at \href{https://docs.google.com/document/d/1GGtE-YIuAWlmpKSr38_kyiF-Fklszhkh4FkiYWzBAho/pub}{\texttt{mlclub.net}}) \hfill  Mar. 2020
+  \item Michigan LCTP Brown Bag Seminar \hfill Ann Arbor, MI, Jan. 2020
+  \item Stony Brook University Particle Physics Seminar \hfill Stony Brook, NY, Nov. 2019
+  \item Minnesota High Energy Theory Lunchtime Seminar \hfill  Minneapolis, MN, Nov. 2019
+  \item Brown Astrophysics Seminar Series \hfill Providence, RI, May 2019
+  \item NYU CCPP Brown Bag Seminar \hfill New York, NY, Apr. 2019
+  \item Particles, Strings and Cosmology (PASCOS) 2018 \hfill Cleveland, OH, Jun. 2018
+  \item Recontres de Blois 2018 \hfill Blois, France, Jun. 2018
+  \item Princeton Astrophysics/IAS Cosmology Lunch Seminar \hfill Princeton, NJ, May 2018
+  \item Fermilab Particle Astrophysics Seminar \hfill Batavia, IL, Mar. 2018
+  \item Workshop on Statistical Challenges in the Search for Dark Matter \hfill Banff, Canada, Feb. 2018
+  \item Maryland Elementary Particle Theory Seminar \hfill College Park, MD, Nov. 2017
+  \item Rutgers High Energy Theory Seminar \hfill New Brunswick, NJ, Nov. 2017
+  \item Cornell Particle Theory Seminar \hfill Ithaca, NY, Nov. 2017
+  \item Caltech Particle Theory Seminar \hfill Pasadena, CA, Oct. 2017
+  \item UC Irvine Joint Particle Seminar \hfill Irvine, CA, Oct. 2017
+  \item ICTP LHC Long-Lived Particles Community Workshop (Remote talk) \hfill Oct. 2017
+  \item Oxford Dalitz Seminar in Fundamental Physics  \hfill Oxford, UK, Oct. 2017
+  \item KIPAC Tea Talk  \hfill Stanford, CA, Sep. 2017
+  \item UC Santa Cruz Institute for Particle Physics Seminar  \hfill Santa Cruz, CA, Sep. 2017
+  \item Berkeley 4D Seminar  \hfill Berkeley, CA, Sep. 2017
+  \item Princeton Pheno \& Vino Seminar \hfill Princeton, NJ, Apr. 2017
+  \item MIT BSM Journal Club \hfill Boston, MA, Nov. 2016
 \end{packed_itemize}
 
 \noindent
@@ -332,22 +365,29 @@ Contributed talks:
 \end{packed_itemize}
 \vspace{2.0mm}
 
-%% Summer schools and workshops
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+%% Schools and Workshops
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Workshops and Schools}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{1.mm}
+
 \begin{packed_itemize}
-\item \emph{Gaia} Sprint 2019 \hfill Santa Barbara, CA, Mar. 2019
-\item Accelerating the Search for Dark Matter with Machine Learning \hfill Leiden, Netherlands, Jan. 2018
-\item Prospects in Theoretical Physics (PiTP) \hfill Princeton, NJ, Jul. 2017
-\item Theoretical Advanced Study Institute (TASI) \hfill Boulder, CO, Jun. 2016
-\item Tri-Institute Summer School on Elementary Particles (TRISEP) \hfill Waterloo, Canada, Jul. 2015
+  \item \emph{Gaia} Sprint 2019 \hfill Santa Barbara, CA, Mar. 2019
+  \item Accelerating the Search for Dark Matter with Machine Learning \hfill Leiden, Netherlands, Jan. 2018
+  \item Prospects in Theoretical Physics (PiTP) \hfill Princeton, NJ, Jul. 2017
+  \item Theoretical Advanced Study Institute (TASI) \hfill Boulder, CO, Jun. 2016
+  \item Tri-Institute Summer School on Elementary Particles (TRISEP) \hfill Waterloo, Canada, Jul. 2015
 \end{packed_itemize}
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
 %% Teaching 
 
 \noindent
@@ -355,60 +395,72 @@ Contributed talks:
 \large {\sc \Large{Teaching Experience}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
+
+\noindent
 \emph{Course numbers refer to courses taught at Princeton.}
 \begin{packed_itemize}
-\item PHY235 Introduction to Research in Physics \hfill Spring 2018
-\item PHY312 Experimental Physics \hfill Spring 2018
-\item PHY115  Physics for Future Leaders \hfill Fall 2017
-\item PHY104  General Physics II \hfill Spring 2016
-\item PHY406 Nuclear and Elementary Particle Physics \hfill Fall 2015
-\item PHY106 Advanced Physics (Electromagnetism) \hfill Spring 2015
-\item MAT201 Calculus III (Multivariable Calculus) \hfill Fall 2014, 2015
-\item PHY105 Advanced Physics (Mechanics) \hfill Fall 2014
+  \item PHY235 Introduction to Research in Physics \hfill Spring 2018
+  \item PHY312 Experimental Physics \hfill Spring 2018
+  \item PHY115  Physics for Future Leaders \hfill Fall 2017
+  \item PHY104  General Physics II \hfill Spring 2016
+  \item PHY406 Nuclear and Elementary Particle Physics \hfill Fall 2015
+  \item PHY106 Advanced Physics (Electromagnetism) \hfill Spring 2015
+  \item MAT201 Calculus III (Multivariable Calculus) \hfill Fall 2014, 2015
+  \item PHY105 Advanced Physics (Mechanics) \hfill Fall 2014
 \end{packed_itemize}
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
 %% Broader impact
  
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Broader Impact and Community}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{1.mm}
+
 \begin{packed_itemize}
-\item \emph{Reviewer}, Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop
-\item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
-% \item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- 2018
-% \item \emph{Member}, Princeton Graduate Housing Advisory Board \hfill 2016 -- 2018
-\item \emph{Vice Chair}, Princeton Graduate College House Committee \hfill 2016 -- 2018
-\item \emph{Subject Representative}, Princeton Graduate Student Government Assembly \hfill 2013 -- 2017
-\item \emph{Organizer}, Princeton Physics Department Open House Committee  \hfill 2015 -- 2016
-\item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- 2018
+  \item \emph{Reviewer}, Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop
+  \item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
+  % \item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- 2018
+  % \item \emph{Member}, Princeton Graduate Housing Advisory Board \hfill 2016 -- 2018
+  \item \emph{Vice Chair}, Princeton Graduate College House Committee \hfill 2016 -- 2018
+  \item \emph{Subject Representative}, Princeton Graduate Student Government Assembly \hfill 2013 -- 2017
+  \item \emph{Organizer}, Princeton Physics Department Open House Committee  \hfill 2015 -- 2016
+  \item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- 2018
 \end{packed_itemize}
 \vspace{2.0mm}
 
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
 %% Work Experience
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{Research Training}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{1.mm}
+
 \begin{packed_itemize}
-\item CERN \hfill Geneva, Switzerland \\ \emph{Visiting Student, CMS Experiment} \hfill Aug. -- Sep. 2012
-\item DAMTP, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Jun. -- Jul. 2012
-\item Institute of Astronomy, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Aug. -- Sep. 2011
-\item CERN \hfill Geneva, Switzerland \\ \emph{Summer Student, CMS Experiment} \hfill Jun. -- Jul. 2011
+  \item CERN \hfill Geneva, Switzerland \\ \emph{Visiting Student, CMS Experiment} \hfill Aug. -- Sep. 2012
+  \item DAMTP, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Jun. -- Jul. 2012
+  \item Institute of Astronomy, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Aug. -- Sep. 2011
+  \item CERN \hfill Geneva, Switzerland \\ \emph{Summer Student, CMS Experiment} \hfill Jun. -- Jul. 2011
 \end{packed_itemize}
 \vspace{2.0mm}
 
-%% Work Experience
+%%%%%%%%%%%%
+%% References
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{References}}\\
 \hline
-\end{tabular*}\vspace{1.5mm}
+\end{tabular*}\vspace{1.mm}
+
 \begin{packed_itemize}
   \item Mariangela Lisanti (Princeton University) \hfill \href{mailto:mlisanti@princeton.edu}{\texttt{mlisanti@princeton.edu}}
   \item Neal Weiner (New York University) \hfill \href{mailto:neal.weiner@nyu.edu}{\texttt{neal.weiner@nyu.edu}}
@@ -416,6 +468,8 @@ Contributed talks:
   \item Joshua Ruderman (New York University) \hfill \href{mailto:ruderman@nyu.edu}{\texttt{ruderman@nyu.edu}}
   \item Christoph Weniger (University of Amsterdam) \hfill \href{mailto:c.weniger@uva.nl}{\texttt{c.weniger@uva.nl}}
 \end{packed_itemize}
+
+%%%%%%%%%%%%
 
 \vspace*{\fill}
 
