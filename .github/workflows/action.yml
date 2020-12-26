@@ -18,11 +18,9 @@ jobs:
                                texlive-latex-extra \
                                texlive-fonts-recommended \
                                texlive-fonts-extra
-      - name: Set environment variable
-        run: |
-          export ENV=GIT
       - name: Build paper
         run: |
+          export ENV=GIT
           ${LATEX} ${MANUSCRIPT_PATH}.tex
       - name: Push paper
         run: |
