@@ -1,7 +1,7 @@
 %%%%%%%%%%%%
 % Basic setup
 
-\documentclass[11pt]{article}
+\documentclass[letterpaper,11pt]{article}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{fullpage}
 \usepackage{etaremune}
@@ -21,7 +21,7 @@
 \newcommand\myshade{85}
 \colorlet{linkcolor}{Maroon}
 
-\setstretch{1}
+\setstretch{1.05}
 
 %%%%%%%%%%%%
 % PDF setup
@@ -59,7 +59,7 @@
    \newcommand{\phone}{}%
   }
   {
-   \newcommand{\phone}{~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 609-933-0103} }%
+   \newcommand{\phone}{\faMobile\hspace{1mm}\href{tel:16099330103}{+1 609-933-0103}}%
   }
 %%%%%%%%%%%%
 
@@ -69,8 +69,8 @@
 \evensidemargin=-0.4in
 \textwidth=7.2in
 \headheight=-0.6in
-\topmargin=0.0in
-\textheight=10.in
+\topmargin=0.12in
+\textheight=9.9in
 %\footheight 1.0in 
 %%%%%%%%%%%%
 
@@ -93,7 +93,7 @@
 % Packed itemize environment
 \newenvironment{packed_itemize}{
 \begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
-  \setlength{\itemsep}{3pt}
+  \setlength{\itemsep}{3.7pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{itemize}
 }
@@ -101,7 +101,7 @@
 % Packed enumerate environment
 \newenvironment{packed_enumerate}[1][]{
 \begin{etaremune}[#1]
-  \setlength{\itemsep}{3pt}
+  \setlength{\itemsep}{3.7pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{etaremune}
 }
@@ -140,11 +140,11 @@
 \begin{center}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
 &\huge{\textbf{\sc{Siddharth Mishra-Sharma}}}&   \\
-& 77 Massachusetts Ave, 
+& 77 Massachusetts Ave 26-650, 
 Cambridge, MA 02139, USA &\\
 
 &\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
-\phone
+~\phone
 ~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
 ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
 % ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &
@@ -169,23 +169,23 @@ Cambridge, MA 02139, USA &\\
 \hline
 \end{tabular*}
 
-% NYU
+% MIT
 \noindent 
 \\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{Massachusetts Institute of Technology}  & \textbf {Cambridge, MA, USA}\\
-%\textbf{Harvard University}  & \textbf {Cambridge, MA, USA}\\
-\emph{NSF AI Institute for Artificial Intelligence and Fundamental Interactions} \vspace{0mm}\\
-{IAIFI Fellow}  & {Sep. 2021 -- Present}  \vspace{2mm} \\
+\textbf{Massachusetts Institute of Technology}, \small{Center for Theoretical Physics}  & \textbf {Cambridge, MA, USA}\\
+\textbf{Harvard University}, \small{Department of Physics} & \textbf {Cambridge, MA, USA}\\
+{NSF AI Institute for Artificial Intelligence and Fundamental Interactions}\\
+\emph{IAIFI Fellow}  & {Sep. 2021 -- Present}  \vspace{2mm}\\
 \end{tabular*}
 
 % NYU
 \noindent 
 \\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{New York University}  & \textbf {New York, NY, USA}\\
-\emph{Center for Cosmology and Particle Physics} \vspace{0mm}\\
-{Postdoctoral Associate}  & {Sep. 2018 -- Aug. 2021}  \\  
+\textbf{New York University} & \textbf {New York, NY, USA}\\
+{Center for Cosmology and Particle Physics}\\
+\emph{Postdoctoral Associate}  & {Sep. 2018 -- Aug. 2021} \\  
 \end{tabular*}
 \vspace{2.0mm}
 
@@ -204,8 +204,8 @@ Cambridge, MA 02139, USA &\\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{Princeton University}  & \textbf {Princeton, NJ, USA}\vspace{0mm}\\
 {Ph.D. in Physics}  & {Sep. 2013 -- Aug. 2018} \vspace{.0mm} \\  
-\small{Advisor: Mariangela Lisanti}& {} \vspace{.0mm} \\
-\small{Thesis: \href{https://dataspace.princeton.edu/jspui/handle/88435/dsp012v23vx15d}{\emph{Extragalactic Searches for Dark Matter Annihilation}}}& {} \vspace{2mm} \\
+{Advisor: Mariangela Lisanti}& {} \vspace{.0mm} \\
+{Thesis: \href{https://dataspace.princeton.edu/jspui/handle/88435/dsp012v23vx15d}{\emph{Extragalactic Searches for Dark Matter Annihilation}}}& {} \vspace{2mm} \\
 % \small{M.A. awarded in Jan. 2015}& {} \vspace{2mm} \\
 
 \end{tabular*}
@@ -234,18 +234,20 @@ Cambridge, MA 02139, USA &\\
 \end{tabular*}\vspace{1.mm}
 
 \begin{packed_itemize}
-  \item IAIFI Fellowship, \emph{NSF AI Institute for Artificial Intelligence and Fundamental Interactions} \hfill 2021 \\ \emph{Awarded towards independent postdoctoral research at the intersection of physics and AI}
+  \item IAIFI Fellowship, \emph{NSF AI Institute for Artificial Intelligence and Fundamental Interactions} \hfill 2021 \\ \emph{Awarded towards independent postdoctoral research at the intersection of physics and \\ artificial intelligence}
   \item Department Teaching Award, \emph{Princeton Department of Physics}  \hfill 2018 \\ \emph{Awarded for excellence in the role of Assistant in Instruction for courses taught at Princeton}
-  \item Kusaka Memorial Prize in Physics, \emph{Princeton Department of Physics} \hfill 2017 \\ \emph{Awarded to physics graduate students who have shown outstanding performance in research and professional promise}
-  \item Princeton Graduate School Impact Award, \emph{Princeton Graduate School} \hfill 2016 \\ \emph{Awarded to an individual in the community that has made a difference during their time at Princeton}
-  \item Princeton First-Year Graduate Fellowship, \emph{Princeton University} \hfill 2013 \\ \emph{Awarded for the first year of graduate study at Princeton}
+  \item Kusaka Memorial Prize in Physics, \emph{Princeton Department of Physics} \hfill 2017 \\ \emph{Awarded to physics graduate students who have shown outstanding performance in research \\ and professional promise}
+  \item Princeton Graduate School Impact Award, \emph{Princeton Graduate School} \hfill 2016 \\ \emph{Awarded to an individual in the community that has made a difference during their time \\ at Princeton}
+  \item Princeton First-Year Graduate Fellowship, \emph{Princeton University} \hfill 2013 \\ \emph{Awarded towards the first year of graduate study at Princeton}
   \item Hugo de Balsham Prize, \emph{Peterhouse, University of Cambridge}  \hfill 2012 \\ \emph{Awarded for exceptional academic distinction at Peterhouse, Cambridge}
-  \item Peter Scheuer Scholarship in Natural Sciences, \emph{Peterhouse, University of Cambridge} \hfill 2011, 2012 \\ \emph{Awarded for exceptional academic performance in Cambridge second/third year Tripos examinations}
-  \item Senior Academic Scholarship, \emph{Peterhouse, University of Cambridge} \hfill 2010\\ \emph{Awarded for exceptional academic performance in Cambridge first year Tripos examinations}
+  \item Peter Scheuer Scholarship in Natural Sciences, \emph{Peterhouse, University of Cambridge} \hfill 2011, 2012 \\ \emph{Awarded for exceptional academic performance in the Cambridge second and third year \\ Tripos examinations}
+  \item Senior Academic Scholarship, \emph{Peterhouse, University of Cambridge} \hfill 2010\\ \emph{Awarded for exceptional academic performance in the Cambridge first year Tripos examinations}
 \end{packed_itemize}
 \vspace{2.0mm}
 
 %%%%%%%%%%%%
+
+\newpage
 
 %%%%%%%%%%%%
 %% Publications 
@@ -259,8 +261,12 @@ Cambridge, MA 02139, USA &\\
 \noindent
 Primary contributions \emph{(Note: except where indicated with an asterisk\,$^*$, authors are listed in alphabetical order as per the standard in particle physics)}:
 
-\begin{packed_enumerate}[start=24]
-  \item $^*$S. Mishra-Sharma and K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, \href{https://ml4physicalsciences.github.io/2019/}{Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020) } \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
+\begin{packed_enumerate}[start=26]
+  \item  $^*$S. Mishra-Sharma and K. Cranmer, \emph{A neural simulation-based inference approach for characterizing the Galactic Center $\gamma$-ray excess}, Under review at Phys.Rev.D. \href{https://arxiv.org/abs/2110.2110.06931}{[arXiv:2110.2110.06931]} 
+
+  \item S. Mishra-Sharma, \emph{Inferring dark matter substructure with astrometric lensing beyond the power spectrum},  Accepted at the \href{https://ml4physicalsciences.github.io/2021/}{Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)} \href{https://arxiv.org/abs/2110.01620}{[arXiv:2110.01620]} 
+
+  \item $^*$S. Mishra-Sharma and K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, \href{https://ml4physicalsciences.github.io/2020/}{Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020)} \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
 
   \item A. Caputo, H. Liu, S. Mishra-Sharma, M. Pospelov, J.T. Ruderman, A. Urbano, \emph{Edges and Endpoints in 21-cm Observations from Resonant Photon Production},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.011102}{Phys.Rev.Lett. \textbf{127} (2021) 011102}   \href{https://arxiv.org/abs/2009.03899}{[arXiv:2009.03899]}
 
@@ -330,13 +336,15 @@ Contributions to white papers and as part of larger collaborations:
 \noindent
 Invited talks:
 \begin{packed_itemize}
-  \item Rutgers High Energy Theory Seminar \hfill Oct. 2021
+  \item  American Astronomical Society 239th Meeting (Invited talk \& panel)  \hfill Salt Lake City, UT, Jan. 2022
+  \item Harvard High Energy Experiment Seminar \hfill Cambridge, MA, Nov. 2021
+  \item Rutgers High Energy Theory Seminar \hfill New Brunswick, NJ, Oct. 2021
   \item Instituto de Astrof\'{i}sica de Canarias Astrophysics Seminar (Remote talk) \hfill Sep. 2021
   \item Stony Brook University YITP Seminar (Remote talk) \hfill Mar. 2021
   \item SLAC AI Seminar Series (Remote talk) \hfill Feb. 2021
   \item Northeastern University Physics Colloquium (Remote talk) \hfill Feb. 2021
   \item Carnegie Observatories ``Lunch Talk'' Seminar (Remote talk) \hfill Feb. 2021
-  \item BSM PANDEMIC Seminar  (Remote talk at \href{https://www.bsmpandemic.com/ }{\texttt{bsmpandemic.com}}) \hfill Nov. 2020
+  \item BSM PANDEMIC Seminar  (Remote talk at \href{https://www.bsmpandemic.com/}{\texttt{bsmpandemic.com}}) \hfill Nov. 2020
   \item SLAC Elementary Particle Physics Seminar (Remote talk) \hfill Jul. 2020
   \item University of Amsterdam GRAPPA Colloquium (Remote talk) \hfill May 2020
   \item Princeton Pheno \& Vino Seminar (Remote talk) \hfill Apr. 2020
@@ -393,25 +401,45 @@ Contributed talks:
 
 %%%%%%%%%%%%
 
+% %%%%%%%%%%%%
+% %% Schools and Workshops
+
+% \noindent
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+% \large {\sc \Large{Workshops and Schools}}\\
+% \hline
+% \end{tabular*}\vspace{1.mm}
+
+% \begin{packed_itemize}
+%   \item \emph{Gaia} Sprint 2019 \hfill Santa Barbara, CA, Mar. 2019
+%   \item Accelerating the Search for Dark Matter with Machine Learning \hfill Leiden, Netherlands, Jan. 2018
+%   \item Prospects in Theoretical Physics (PiTP) \hfill Princeton, NJ, Jul. 2017
+%   \item Theoretical Advanced Study Institute (TASI) \hfill Boulder, CO, Jun. 2016
+%   \item Tri-Institute Summer School on Elementary Particles (TRISEP) \hfill Waterloo, Canada, Jul. 2015
+% \end{packed_itemize}
+% \vspace{2.0mm}
+
+% %%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+%%% Advising 
+%
+%\noindent
+%\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+%\large {\sc \Large{Academic Advising}}\\
+%\hline
+%\end{tabular*}\vspace{1mm}
+%
+%\noindent
+%\begin{packed_itemize}
+%  \item Reul
+%  \item Jean
+%  \item Laura
+%\end{packed_itemize}
+%\vspace{2.0mm}
+
 %%%%%%%%%%%%
-%% Schools and Workshops
 
-\noindent
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Workshops and Schools}}\\
-\hline
-\end{tabular*}\vspace{1.mm}
-
-\begin{packed_itemize}
-  \item \emph{Gaia} Sprint 2019 \hfill Santa Barbara, CA, Mar. 2019
-  \item Accelerating the Search for Dark Matter with Machine Learning \hfill Leiden, Netherlands, Jan. 2018
-  \item Prospects in Theoretical Physics (PiTP) \hfill Princeton, NJ, Jul. 2017
-  \item Theoretical Advanced Study Institute (TASI) \hfill Boulder, CO, Jun. 2016
-  \item Tri-Institute Summer School on Elementary Particles (TRISEP) \hfill Waterloo, Canada, Jul. 2015
-\end{packed_itemize}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Teaching 
@@ -423,7 +451,13 @@ Contributed talks:
 \end{tabular*}\vspace{3.5mm}
 
 \noindent
-\emph{Course numbers refer to courses taught at Princeton.}
+Courses taught at MIT:
+\begin{packed_itemize}
+  \item 8.S50 Computational Data Science in Physics \hfill Winter 2022
+\end{packed_itemize}
+
+\noindent
+Courses taught at Princeton:
 \begin{packed_itemize}
   \item PHY235 Introduction to Research in Physics \hfill Spring 2018
   \item PHY312 Experimental Physics \hfill Spring 2018
@@ -448,7 +482,7 @@ Contributed talks:
 \end{tabular*}\vspace{1.mm}
 
 \begin{packed_itemize}
-  \item \emph{Reviewer}, Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop, Journal of \\ Open Source Software
+  \item \emph{Reviewer}, Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun., JHEP,\hfill 2017 -- Present \\ NeurIPS Machine Learning and the Physical Sciences Workshop, NeurIPS \\ AI for Science Workshop, Journal of Open Source Software
   \item \emph{Member}, IAIFI Early Career and Equity Committee  \hfill 2021 -- Present
   \item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
   % \item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- 2018
@@ -459,7 +493,6 @@ Contributed talks:
   \item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- 2018
 \end{packed_itemize}
 \vspace{2.0mm}
-\newpage
 
 %%%%%%%%%%%%
 
@@ -492,6 +525,7 @@ Contributed talks:
 \begin{packed_itemize}
   \item Mariangela Lisanti (Princeton University) \hfill \href{mailto:mlisanti@princeton.edu}{\texttt{mlisanti@princeton.edu}}
   \item Kyle Cranmer (New York University) \hfill \href{mailto:kyle.cranmer@nyu.edu}{\texttt{kyle.cranmer@nyu.edu}}
+  \item Cora Dvorkin (Harvard University) \hfill \href{mailto:cdvorkin@g.harvard.edu}{\texttt{cdvorkin@g.harvard.edu}}
   \item Neal Weiner (New York University) \hfill \href{mailto:neal.weiner@nyu.edu}{\texttt{neal.weiner@nyu.edu}}
   \item Joshua Ruderman (New York University) \hfill \href{mailto:ruderman@nyu.edu}{\texttt{ruderman@nyu.edu}}
   \item Christoph Weniger (University of Amsterdam) \hfill \href{mailto:c.weniger@uva.nl}{\texttt{c.weniger@uva.nl}}
