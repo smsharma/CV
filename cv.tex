@@ -1,4 +1,8 @@
 %%%%%%%%%%%%
+% TODO
+%- Page numbers
+
+%%%%%%%%%%%%
 % Basic setup
 
 \documentclass[letterpaper,11pt]{article}
@@ -6,7 +10,6 @@
 \usepackage{fullpage}
 \usepackage{etaremune}
 \usepackage{setspace}
-\usepackage{geometry} 
 \usepackage{textcomp}
 \usepackage{fancyhdr}
 \usepackage{fontawesome}
@@ -14,6 +17,11 @@
 \usepackage{ifthen}
 \usepackage{ifpdf}
 \usepackage{catchfile}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{lastpage}
+\usepackage{eso-pic}
+\usepackage{transparent}
 
 %%%%%%%%%%%%
 % Link colour
@@ -22,6 +30,20 @@
 \colorlet{linkcolor}{Maroon}
 
 \setstretch{1.08}
+
+%%%%%%%%%%%%
+% Background pic
+
+\newcommand\BackgroundPic{%
+\put(-2mm,1.\paperheight / 2.){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\transparent{0.1}\includegraphics[width=1.18\paperwidth]{header2.png}%
+% \transparent{0.16}\includegraphics[width=1.04\paperwidth]{header.png}%
+\vfill
+}}}
+
+\AddToShipoutPicture*{\BackgroundPic}
 
 %%%%%%%%%%%%
 % PDF setup
@@ -70,18 +92,16 @@
 \textwidth=7.2in
 \headheight=-0.6in
 \topmargin=0.12in
-\textheight=9.9in
-%\footheight 1.0in 
+\textheight=9.6in
 %%%%%%%%%%%%
 
 %% Setup the header and footer
-%\pagestyle{fancy}                                                      
-%\cfoot{Page\ \thepage\ of\ 2}                                                               
-%%\rfoot{}                         
-%\renewcommand\headrulewidth{0.0pt}                                     
-%\renewcommand\footrulewidth{0.4pt}  
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{Page\ \thepage\ of\ \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.8pt}
 
-\pagestyle{empty}
 \setlength{\tabcolsep}{0in}
 \hyphenchar\font=-1
 
@@ -93,7 +113,7 @@
 % Packed itemize environment
 \newenvironment{packed_itemize}{
 \begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
-  \setlength{\itemsep}{3.9pt}
+  \setlength{\itemsep}{3.7pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{itemize}
 }
@@ -101,23 +121,10 @@
 % Packed enumerate environment
 \newenvironment{packed_enumerate}[1][]{
 \begin{etaremune}[#1]
-  \setlength{\itemsep}{3.9pt}
+  \setlength{\itemsep}{3.7pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{etaremune}
 }
-
-%-----------------------------------------------------------
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}}
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{6.8in}{l@{\extracolsep{\fill}}r}
-		{#1} & {#2} \\
-		{#3} & {#4} \\
-\end{tabular*}\vspace{-6pt}}
-%-----------------------------------------------------------
-
- \usepackage{fancyhdr}
-
  \fancypagestyle{style1}{
  \fancyhf{}
  \fancyhead[C]{style 1 with thin line}
@@ -132,6 +139,10 @@
 % \renewcommand{\headrulewidth}{1pt}
 % }
 
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
 \begin{document}
 
 %%%%%%%%%%%%
@@ -144,9 +155,9 @@
 Cambridge, MA 02139, USA &\\
 
 &\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
-~\phone
-~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
-~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
+~~\phone
+~~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
+~~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
 % ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &
 \vspace{0.5mm}
 \\ 
@@ -247,8 +258,6 @@ Cambridge, MA 02139, USA &\\
 
 %%%%%%%%%%%%
 
-\newpage
-
 %%%%%%%%%%%%
 %% Publications 
 
@@ -258,28 +267,38 @@ Cambridge, MA 02139, USA &\\
 \hline
 \end{tabular*}\vspace{3.5mm}
 
-%% TODO: Find a way to list multiple versions (workshop papers)
-
 \noindent
 Primary contributions \emph{(Note: except where indicated with an asterisk\,$^*$, authors are listed in alphabetical order as per the standard in particle physics)}:
 
-\begin{packed_enumerate}[start=34]
+\begin{packed_enumerate}[start=33]
 
-  \item $^*$G. Zhang, \underline{S. Mishra-Sharma} and C. Dvorkin, \emph{Inferring subhalo effective density slopes from strong lensing observations with neural likelihood-ratio estimation} \href{https://arxiv.org/abs/2208.13796}{[arXiv:2208.13796]}, Under review at MNRAS
+  \item $^*$G. Zhang, \underline{S. Mishra-Sharma} and C. Dvorkin, \emph{Inferring subhalo effective density slopes from strong lensing observations with neural likelihood-ratio estimation}, \href{https://doi.org/10.1093/mnras/stac3014}{Mon.Not.Roy.Astron.Soc. 517 (2022) 4317} \href{https://arxiv.org/abs/2208.13796}{[arXiv:2208.13796]}
 
-  \item $^*$T. Nguyen, \underline{S. Mishra-Sharma} and L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks} \href{https://arxiv.org/abs/2208.12825}{[arXiv:2208.12825]}  %, Under review at Phys.Rev.Lett.
+  \item $^*$T. Nguyen, \underline{S. Mishra-Sharma} and L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks}
+\    \begin{packed_itemize}
+      \item Accepted at Phys.Rev.\,D \href{https://arxiv.org/abs/2208.12825}{[arXiv:2208.12825]}
+      \item Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022) \href{https://ml4astro.github.io/icml2022/}{[Spotlight Oral]} \href{https://ml4astro.github.io/icml2022/assets/38.pdf}{[Paper]}
+    \end{packed_itemize}
+\
+  \item $^*$\underline{S. Mishra-Sharma} and G. Yang, \emph{Strong Lensing Source Reconstruction Using Continuous Neural Fields}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} \href{https://ml4astro.github.io/icml2022/}{[Spotlight Oral]} \href{https://arxiv.org/abs/2206.14820}{[arXiv:2206.14820]}
+   
+  % \item $^*$T. Nguyen, \underline{S. Mishra-Sharma} and L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} [Spotlight Oral] \href{https://ml4astro.github.io/icml2022/assets/38.pdf}{[Paper]}
 
-  \item $^*$\underline{S. Mishra-Sharma} and G. Yang, \emph{Strong Lensing Source Reconstruction Using Continuous Neural Fields}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} [Spotlight Oral] \href{https://arxiv.org/abs/2206.14820}{[arXiv:2206.14820]}
+  \item A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, M. Pospelov, J.T. Ruderman, \emph{A Stimulating Explanation of the Extragalactic Radio Background}, Under review at Phys.Rev.Lett \href{https://arxiv.org/abs/2206.07713}{[arXiv:2206.07713]}
 
-  \item $^*$T. Nguyen, \underline{S. Mishra-Sharma} and L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} [Spotlight Oral] \href{https://ml4astro.github.io/icml2022/assets/38.pdf}{[Paper]}
-
-  \item A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, M. Pospelov, J.T. Ruderman, \emph{A Stimulating Explanation of the Extragalactic Radio Background} \href{https://arxiv.org/abs/2206.07713}{[arXiv:2206.07713]}
-
-  \item  $^*$\underline{S. Mishra-Sharma} and K. Cranmer, \emph{A neural simulation-based inference approach for characterizing the Galactic Center $\gamma$-ray excess}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.063017}{Phys.Rev. \textbf{D105} (2022) 063017}  \href{https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_69_poster.png}{[Poster]}\,\href{https://arxiv.org/abs/2110.2110.06931}{[arXiv:2110.2110.06931]}
+  \item  $^*$\underline{S. Mishra-Sharma} and K. Cranmer, \emph{A neural simulation-based inference approach for characterizing the Galactic Center $\gamma$-ray excess}
+    \begin{packed_itemize}
+      \item {\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.063017}{Phys.Rev. \textbf{D105} (2022) 063017} \href{https://arxiv.org/abs/2110.2110.06931}{[arXiv:2110.2110.06931]}}
+      \item {Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}}
+    \end{packed_itemize}
 
 %  \item  $^*$\underline{S. Mishra-Sharma} and K. Cranmer, \emph{Characterizing $\gamma$-ray maps of the Galactic Center with neural density estimation}, Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}
 
-  \item \underline{S. Mishra-Sharma}, \emph{Inferring dark matter substructure with astrometric lensing beyond the power spectrum},  {Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)} \href{https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_22_poster.png}{[Poster]};  \href{https://doi.org/10.1088/2632-2153/ac494a}{Mach.Learn.Sci.Tech. \textbf{3} (2022) 01LT03} \,\href{https://arxiv.org/abs/2110.01620}{[arXiv:2110.01620]}
+  \item \underline{S. Mishra-Sharma}, \emph{Inferring dark matter substructure with astrometric lensing beyond the power spectrum}  
+  \begin{packed_itemize}
+    \item {\href{https://doi.org/10.1088/2632-2153/ac494a}{Mach.Learn.Sci.Tech. \textbf{3} (2022) 01LT03} \,\href{https://arxiv.org/abs/2110.01620}{[arXiv:2110.01620]}}
+    \item {{Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)} \href{https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_22_poster.png}{[Poster]}}
+    \end{packed_itemize}
 
   \item $^*$\underline{S. Mishra-Sharma} and K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, {Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020)} \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
 
@@ -344,7 +363,7 @@ Contributions to white papers and as part of larger collaborations:
 \end{packed_enumerate}
 \vspace{2.0mm}
 
-\newpage
+% \newpage
 
 %%%%%%%%%%%%
 
@@ -353,14 +372,19 @@ Contributions to white papers and as part of larger collaborations:
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Seminars and Conference Talks}}\\
+\large {\sc \Large{Seminars, Colloquia, and Conference Talks}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
 
 \noindent
 Invited talks:
 \begin{packed_itemize}
+  \item Simons Foundation Math+X Symposium \hfill J\"{o}kuls\'arl\'on, Iceland, May. 2023
+  \item Aspen Center for Physics Winter Session \hfill Aspen, CO, Mar. 2023
+  \item Yale Astrophysics Colloquium \hfill New Haven, CT, Feb. 2023
+  \item Mila ML for the Physical Sciences Reading Group \hfill Montr\'eal, Quebec, Jan. 2023
   \item McGill Space Institute Astronomy Seminar \hfill Montr\'eal, Quebec, Jan. 2023
+  \item Nature of Dark Matter on Small Scales Meeting (Remote) \hfill  Oct. 2022
   \item Dagstuhl Seminar: Bridging Data-driven and Mechanistic Modelling \hfill Dagstuhl, Germany, Sep. 2022
   \item Hammers \& Nails Workshop 2022 \hfill Rehovot, Israel, Aug. 2022
   \item ICML 2022 ML4Astro Workshop (Spotlight oral) \hfill Baltimore, MD, May. 2022
@@ -447,7 +471,7 @@ Contributed talks:
 
 \begin{packed_itemize}
   \item \emph{Organizer}, NeurIPS Machine Learning and the Physical Sciences Workshop \hfill 2022
-  \item \emph{Reviewer}, Astrophys. J., Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun.,\hfill 2017 -- Present \\ JHEP, NeurIPS Machine Learning and the Physical Sciences Workshop, NeurIPS \\ AI for Science Workshop, ICLR Workshop on Deep Generative Models for Highly \\ Structured Data, ICML Workshop on Machine Learning for Astrophysics, \\ Journal of Open Source Software
+  \item \emph{Reviewer}, Astrophys. J., Phys.Rev. {D}, Phys.Rev.Lett., Comput.Phys.Commun.,\hfill 2017 -- Present \\ JHEP, NeurIPS Machine Learning and the Physical Sciences Workshop, NeurIPS \\ AI for Science Workshop, ICLR Workshop on Deep Generative Models for Highly \\ Structured Data, ICML Workshop on Machine Learning for Astrophysics, \\ Journal of Open Source Software, Mach.Learn.Sci.Tech.
   \item \emph{Member}, IAIFI Computing Committee  \hfill 2022 -- Present
   \item \emph{Member}, IAIFI Early Career and Equity Committee  \hfill 2021 -- Present
   \item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
@@ -462,25 +486,27 @@ Contributed talks:
 
 %%%%%%%%%%%%
 
-%%%%%%%%%%%%%
-%%% Mentoring 
-%
-%\noindent
-%\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-%\large {\sc \Large{Mentoring Experience}}\\
-%\hline
-%\end{tabular*}\vspace{1.mm}
-%
-%\begin{packed_itemize}
-%  \item Aizhan Akhmetzhanova (Graduate, {Harvard}) \hfill 2021 -- Present \\ \emph{Cross-correlating multiple cosmological tracers using machine learning}
-%  \item Reuel Williams (Undergraduate, {Princeton})\hfill Summer 2021 \\ \emph{Using graph neural networks to understand the distribution of dark matter in dwarf galaxies}
-%  \item Jean Somalwar (Undergraduate, {Princeton})\hfill 2019 -- 2020 \\ \emph{Using photon statistics to search for dark matter annihilation in Galactic subhalos}\,\href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
-%  \item Laura Chang (Graduate, {Princeton})\hfill 2018 -- 2020 \\ \emph{Searches for annihilating dark matter in the Milky Way}\,\href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}\,\href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}
-%\end{packed_itemize}
-%\vspace{2.0mm}
-%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%
+%% Mentoring 
 
+\noindent
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
+\large {\sc \Large{Research Mentorship}}\\
+\hline
+\end{tabular*}\vspace{1.mm}
+
+\begin{packed_itemize}
+  \item Yitian Sun (Graduate, {MIT}) \hfill 2021 -- Present \\ \emph{Probabilistic programming and deep generative modeling for $\gamma$-ray data analysis}
+  \item Aizhan Akhmetzhanova (Graduate, {Harvard}) \hfill 2021 -- Present \\ \emph{Improving generalizability to astrophysical backgrounds with self-supervised learning}
+  \item Tri Nguyen (Graduate, {MIT}) \hfill 2021 -- Present \\ \emph{Inferring the shapes of dark matter halos with graph neural networks} \href{https://arxiv.org/abs/2208.12825}{[arXiv:2208.12825]}
+  \item Gemma Zhang (Graduate, {Harvard}) \hfill 2021 -- 2022 \\ \emph{Inferring subhalo populations in strong lenses with likelihood-free inference} \href{https://arxiv.org/abs/2208.13796}{[arXiv:2208.13796]}
+  \item Reuel Williams (Undergraduate, {Princeton})\hfill Summer 2021 \\ \emph{Inferring the shapes of dark matter halos with graph neural networks} \href{https://arxiv.org/abs/2208.12825}{[arXiv:2208.12825]}
+  \item Jean Somalwar (Undergraduate, {Princeton})\hfill 2019 -- 2020 \\ \emph{Searching for dark matter in Galactic subhalos using photon statistics} \href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
+  \item Laura Chang (Graduate, {Princeton})\hfill 2018 -- 2020 \\ \emph{Searches for annihilating dark matter in the Milky Way} \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}\,\href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}
+  \end{packed_itemize}
+\vspace{2.0mm}
+
+%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Teaching 
@@ -563,7 +589,8 @@ Courses taught at Princeton:
 \begin{packed_itemize}
   \item Mariangela Lisanti (Princeton University) \hfill \href{mailto:mlisanti@princeton.edu}{\texttt{mlisanti@princeton.edu}}
   \item Kyle Cranmer (University of Wisconsin, Madison) \hfill \href{mailto:kyle.cranmer@wisc.edu}{\texttt{kyle.cranmer@wisc.edu}}
-  \item Cora Dvorkin (Harvard University) \hfill \href{mailto:cdvorkin@g.harvard.edu}{\texttt{cdvorkin@g.harvard.edu}}
+  \item Tracy Slatyer (MIT) \hfill \href{mailto:tslatyer@mit.edu}{\texttt{tslatyer@mit.edu}}
+  \item Jesse Thaler (MIT) \hfill \href{mailto:jthaler@mit.edu}{\texttt{jthaler@mit.edu}}
   \item Neal Weiner (New York University) \hfill \href{mailto:neal.weiner@nyu.edu}{\texttt{neal.weiner@nyu.edu}}
   \item Joshua Ruderman (New York University) \hfill \href{mailto:ruderman@nyu.edu}{\texttt{ruderman@nyu.edu}}
   \item Christoph Weniger (University of Amsterdam) \hfill \href{mailto:c.weniger@uva.nl}{\texttt{c.weniger@uva.nl}}
