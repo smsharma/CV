@@ -22,6 +22,7 @@ jobs:
         run: |
           export ENV=GIT
           ${LATEX} ${MANUSCRIPT_PATH}.tex
+          ${LATEX} ${MANUSCRIPT_PATH}.tex
       - name: Push paper
         run: |
           git checkout --orphan ${GITHUB_REF##*/}-pdf
