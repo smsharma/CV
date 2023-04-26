@@ -5,4 +5,9 @@
 *.out
 *.synctex.gz
 *.pdf
+*.bbl
+*.blg
 .DS_Store
+
+# Version with a nice name
+Mishra-Sharma_CV
