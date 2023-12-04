@@ -1,13 +1,16 @@
+# LaTeX
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
-*.pdf
 *.bbl
 *.blg
 .DS_Store
+
+# PDF
+cv.pdf
 
 # Version with a nice name
 Mishra-Sharma_CV
