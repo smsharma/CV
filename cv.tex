@@ -20,6 +20,25 @@
 \usepackage{lastpage}
 \usepackage{eso-pic}
 \usepackage{transparent}
+\usepackage{eso-pic}
+\usepackage{calc}
+\usepackage{microtype}
+
+%%%%%%%%%%%%
+% Last updated
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{%
+    \put(\LenToUnit{\paperwidth-\oddsidemargin-1.075in},\LenToUnit{-9.5mm}){%
+      \makebox[0pt][r]{\footnotesize\textcolor{gray!80}{\textit{Last updated: \today}}}%
+    }%
+  }%
+}
+
+%%%%%%%%%%%%
+% Subtle \mid separator
+
+\newcommand{\lightsep}{\textcolor{gray!80}{$\mid$}}
 
 %%%%%%%%%%%%
 % Link colour
@@ -27,7 +46,10 @@
 \newcommand\myshade{85}
 \colorlet{linkcolor}{Maroon}
 
-\setstretch{1.13}
+%%%%%%%%%%%%
+% Spacing
+
+\setstretch{1.14}
 
 %%%%%%%%%%%%
 % Logos
@@ -139,18 +161,14 @@
  \renewcommand{\headrulewidth}{0.4pt}
  }
 
-% \fancypagestyle{style2}{
-% \fancyhf{}
-% \fancyhead[C]{STYLE 2 WITH THICK LINE}
-% \fancyfoot[C]{= \thepage{} =}
-% \renewcommand{\headrulewidth}{1pt}
-% }
 
 \newcommand{\SubItem}[1]{
     {\setlength\itemindent{15pt} \item[-] #1}
 }
 
 \begin{document}
+\sloppy
+\raggedbottom
 
 %%%%%%%%%%%%
 %% Heading
@@ -161,11 +179,11 @@
 & 77 Massachusetts Ave, 26-648, 
 Cambridge, MA 02139, USA &\\
 
+%&\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
 &\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
-~~\phone
-~~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
-~~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
-% ~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} &
+~\lightsep~\phone
+~\lightsep~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
+~\lightsep~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
 \vspace{0.5mm}
 \\ 
 
@@ -183,7 +201,7 @@ Cambridge, MA 02139, USA &\\
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Appointments}}\\
+\large {\sc \Large{\faSuitcase~Appointments}}\\
 \hline
 \end{tabular*}
 
@@ -191,11 +209,19 @@ Cambridge, MA 02139, USA &\\
 \noindent 
 \\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%\textbf{Massachusetts Institute of Technology}, \small{Center for Theoretical Physics}  & \textbf {Cambridge, MA, USA}\\
-%\textbf{Harvard University}, \small{Department of Physics} & \textbf {Cambridge, MA, USA}\\
 \textbf{Boston University} & \textbf {Boston, MA, USA}\\
-{Faculty of Computing \& Data Sciences}\\
-\emph{Assistant Professor of Computing \& Data Sciences and Physics}  & {Starting in 2025}  \vspace{2mm}\\
+\href{https://www.bu.edu/cds-faculty/profile/siddharth-mishra-sharma/}{Faculty of Computing \& Data Sciences}\\
+\emph{Assistant Professor of Computing \& Data Sciences and Physics}  & {Starting in Jul. 2025} \\
+\emph{Visiting Researcher}  & {Jun. 2024 -- Present}  \vspace{2mm}\\
+\end{tabular*}
+
+
+% Anthropic
+\noindent 
+\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Anthropic} & \textbf {San Francisco, CA, USA}\\
+\emph{Resident}  & {Jul. 2024 -- Present}  \vspace{2mm}\\
 \end{tabular*}
 
 % MIT
@@ -206,8 +232,8 @@ Cambridge, MA 02139, USA &\\
 %\textbf{Harvard University}, \small{Department of Physics} & \textbf {Cambridge, MA, USA}\\
 \textbf{Massachusetts Institute of Technology} & \textbf {Cambridge, MA, USA}\\
 \textbf{Harvard University} & \textbf {Cambridge, MA, USA}\\
-{NSF AI Institute for Artificial Intelligence and Fundamental Interactions}\\
-\emph{IAIFI Fellow}  & {Sep. 2021 -- Present}  \vspace{2mm}\\
+\href{https://iaifi.org/}{NSF AI Institute for Artificial Intelligence and Fundamental Interactions}\\
+\emph{IAIFI Fellow}  & {Sep. 2021 -- Jul. 2024}  \vspace{2mm}\\
 \end{tabular*}
 
 % NYU
@@ -215,7 +241,7 @@ Cambridge, MA 02139, USA &\\
 \\
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{New York University} & \textbf {New York, NY, USA}\\
-{Center for Cosmology and Particle Physics}\\
+\href{http://www.ccpp.nyu.edu/index.php}{Center for Cosmology and Particle Physics}\\
 \emph{Postdoctoral Associate}  & {Sep. 2018 -- Aug. 2021} \\  
 \end{tabular*}
 \vspace{2.0mm}
@@ -225,7 +251,7 @@ Cambridge, MA 02139, USA &\\
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Education}}\\
+\large {\sc \Large{\faGraduationCap~Education}}\\
 \hline
 \end{tabular*}
 
@@ -260,7 +286,7 @@ Cambridge, MA 02139, USA &\\
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Awards and Honors}}\\
+\large {\sc \Large{\faTrophy~Awards and Honors}}\\
 \hline
 \end{tabular*}\vspace{1.mm}
 
@@ -284,7 +310,7 @@ Cambridge, MA 02139, USA &\\
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\large {\sc \Large{Publications}} & 
+\large {\sc \Large{\faBook~Publications}} & 
 \href{https://arxiv.org/a/mishrasharma_s_1.html}{\arxivlogo}  \
 \href{https://scholar.google.com/citations?hl=en&user=hJVjhlwAAAAJ&view_op=list_works&sortby=pubdate}{\scholarlogo}  \ 
 \href{https://inspirehep.net/authors/1394493}{\inspirelogo}  \ 
@@ -297,13 +323,30 @@ Primary contributions: \emph{(Note: where indicated with an asterisk\,$^*$, auth
 
 \begin{packed_enumerate}[start=39]
 
-  \item \underline{S. Mishra-Sharma}, Y. Song, J. Thaler, \emph{PAPERCLIP: Associating Astronomical Observations and Natural Language with Multi-Modal Models}, Submitted to Conference on Language Modeling (COLM 2024)  \href{https://arxiv.org/abs/2403.08851}{[arXiv:2403.08851]}
+%- Jax BBN 2
+%- Jax BBN 1
+%- Overconfident NPTF
+%- Multimodal supernovae
+%- NPTF SVI
+%- Bayesian NPE
+%- Benchmarking equivariant NNs
+%- Evidences and biases
+%- DREAMs diffusion
+%- GNN-GravSphere
+%- All-in-one transient
+%- Generative AI impact paper
+
+  \item \underline{S. Mishra-Sharma}, Y. Song, J. Thaler, \emph{PAPERCLIP: Associating Astronomical Observations and Natural Language with Multi-Modal Models}, Accepted at Conference on Language Modeling (COLM 2024)  \href{https://arxiv.org/abs/2403.08851}{[arXiv:2403.08851]}
 
   \item M.M. Ivanov, $^{\dagger}$C. Cuesta-Lazaro, $^{\dagger}$\underline{S. Mishra-Sharma}, $^{\dagger}$A. Obuljen, $^{\dagger}$M. Toomey, \emph{Full-shape analysis with simulation-based priors: constraints on single field inflation from BOSS}, Under review at Phys.Rev. {D} \href{https://arxiv.org/abs/2402.13310}{[arXiv:2402.13310]}
 
   \item $^*$L. Heinrich, \underline{S. Mishra-Sharma}, C. Pollard, P. Windischhofer, \emph{Hierarchical Neural Simulation-Based Inference Over Event Ensembles}, \href{https://openreview.net/forum?id=Jy2IgzjoFH&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DTMLR%2FAuthors%23your-submissions)}{Transactions on Machine Learning Research (TMLR)} \href{https://arxiv.org/abs/2306.12584}{[arXiv:2306.12584]}
 
-  \item $^{\dagger}$\underline{S. Mishra-Sharma}, $^{\dagger}$C. Cuesta-Lazaro, \emph{A point cloud approach to generative modeling for galaxy surveys at the field level}, {Machine Learning for Astrophysics Workshop at the Fortieth International Conference on Machine Learning (ICML 2023)} \href{https://ml4astro.github.io/icml2023/}{\textbf{[Spotlight Oral]}}, \href{https://journals.aps.org/prd/accepted/5907fQ68Z5815e37a40f84f851f38f86586f75410}{Accepted at  Phys.Rev. {D}} \href{https://arxiv.org/abs/2311.17141}{[arXiv:2311.17141]}  %\href{https://ml4astro.github.io/icml2023/assets/59.pdf}{[Paper]} 
+  \item $^{\dagger}$\underline{S. Mishra-Sharma}, $^{\dagger}$C. Cuesta-Lazaro, \emph{A point cloud approach to generative modeling for galaxy surveys at the field level}
+  \begin{packed_itemize}
+      \item  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.123531}{Phys.Rev. {D}} \href{https://arxiv.org/abs/2311.17141}{[arXiv:2311.17141]}
+      \item {Machine Learning for Astrophysics Workshop at the Fortieth International Conference on Machine Learning (ICML 2023)} \href{https://ml4astro.github.io/icml2023/}{\textbf{[Spotlight Oral]}} \href{https://ml4astro.github.io/icml2023/assets/59.pdf}{[Paper]} 
+       \end{packed_itemize}
 
   \item $^*$\underline{S. Mishra-Sharma}, T.R. Slatyer, Y. Sun, Y. Wu, \emph{Disentangling gamma-ray observations of the Galactic Center using differentiable probabilistic programming}, {Machine Learning for Astrophysics Workshop at the Fortieth International Conference on Machine Learning (ICML 2023)} \href{https://ml4astro.github.io/icml2023/}{\textbf{[Spotlight Oral]}} \href{https://ml4astro.github.io/icml2023/assets/52.pdf}{[Paper]}
 
@@ -411,7 +454,7 @@ Contributions to white papers and as part of larger collaborations:
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Seminars, Colloquia, and Conference Talks}}\\
+\large {\sc \Large{\faBullhorn~Seminars, Colloquia, and Conference Talks}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
 
@@ -421,10 +464,9 @@ Invited talks:
   \item UC Santa Barbara Computer Science Colloquium \hfill Santa Barbara, CA, Jun. 2024
   \item KITP Program: Cosmic Signals of Dark Matter Physics \hfill Santa Barbara, CA, Jun. 2024
   \item European AI for Fundamental Physics Conference, Plenary \hfill Amsterdam, Netherlands, Apr. 2024
-%  \item University of Amsterdam Anton Pannekoek Institute Colloq. \hfill Amsterdam, Netherlands, Apr. 2024
   \item Herzberg Astronomy and Astrophysics Research Centre Colloquium (Remote) \hfill Apr. 2024
   \item Rutgers High Energy Theory Seminar \hfill New Brunswick, NJ, Mar. 2024
-  \item Boston University Computing and Data Sciences (CDS) Colloquium \hfill Boston, MA, Feb. 2024
+  \item Boston University Computing \& Data Sciences (CDS) Colloquium \hfill Boston, MA, Feb. 2024
   \item Georgia Tech School of Physics Colloquium \hfill Atlanta, GA, Jan. 2024
   \item Rising Stars in Data Science Workshop \hfill Chicago, IL, Nov. 2023
   \item Summit for AI Institutes Leadership \hfill Atlanta, GA, Oct. 2023
@@ -521,7 +563,7 @@ Contributed talks:
  
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Broader Impact and Organizing}}\\
+\large {\sc \Large{\faUsers~Broader Impact and Organizing}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
 
@@ -540,7 +582,7 @@ External organizing:
       2025
       \end{minipage}\vspace{1.5mm}
 \item \begin{minipage}[t]{.84\linewidth}
-      \emph{Organizer}, \href{https://aspenphys.org/physicists/summer/program/currentworkshops.html}{Aspen Center for Physics Summer Program}: 
+      \emph{Organizer}, \href{https://aspenphys.org/summer-workshops/#event2401}{Aspen Center for Physics Summer Program}: 
       \emph{Fundamental Physics in the Era of Big Data and Machine Learning}
       \end{minipage}%
       \hfill%
@@ -552,21 +594,12 @@ External organizing:
   \item \emph{Organizer}, \href{https://ml4physicalsciences.github.io/}{NeurIPS Machine Learning and the Physical Sciences Workshop} \hfill 2022, 2023
   \end{packed_itemize}
   \noindent
-Reviewing:
-  \begin{packed_itemize}
-  \item \emph{Journal Reviewer}, \ \scriptsize{Astrophysical Journal, Physical Review {D}, Physical Review {Letters}, Computer Physics Communications, JHEP,  JCAP, Journal of Open Source Software, MLST, MNRAS}\normalsize
-  \item \emph{Workshop Reviewer},  \scriptsize{NeurIPS Machine Learning and the Physical Sciences Workshop (2019--2023), NeurIPS AI for Science Workshop (2021--2023), NeurIPS GenBio Workshop (2023), ICLR Workshop on Deep Generative Models for Highly Structured Data (2022), ICLR Workshop on Neural Fields (2023), ICML Workshop on Machine Learning for Astrophysics (2022, 2023), ICML Workshop on Structured Probabilistic Inference \& Generative Modeling (2023), ICML Workshop on Synergy of Scientific and Machine Learning Modeling (2023),  Advances in Approximate Bayesian Inference (2024)}\normalsize
-  \item \emph{Reviewer}, \scriptsize{NeurIPS Workshop Selection (2023), ICML Workshop Selection (2024)}\normalsize
-  \item \emph{Grant Reviewer}, Department of Energy ASCR Leadership Computing Challenge \hfill 2023
-  \item \emph{Grant Review Panelist}, NASA ROSES/Astrophysics Research and Analysis \hfill 2023
-  \end{packed_itemize}
-  \noindent
 Internal organizing:
   \begin{packed_itemize}
   \item \emph{Organizer}, \href{https://iaifi.org/generative-ai-workshop}{Symposium on the Impact of Generative AI in the Physical Sciences}  \hfill 2024
   \item \emph{Organizer}, \href{https://iaifi.org/hackathon.html}{Boston-Area Machine Learning $\times$ Astrophysics Hackathon}  \hfill 2024
-  \item \emph{Co-chair}, IAIFI Speaker Selection Committee  \hfill 2023 -- Present
-  \item \emph{Member}, IAIFI Computing Committee  \hfill 2022 -- Present
+  \item \emph{Co-chair}, IAIFI Speaker Selection Committee  \hfill 2023 -- 2024
+  \item \emph{Member}, IAIFI Computing Committee  \hfill 2022 -- 2024
   \item \emph{Member}, IAIFI Early Career and Equity Committee  \hfill 2021 -- 2023
   \item \emph{Organizer}, NYU CCPP Particle Physics Seminar \hfill 2019 -- 2020
   % \item \emph{Member}, Princeton University Student Life Committee \hfill 2016 -- 2018
@@ -576,6 +609,15 @@ Internal organizing:
   \item \emph{Organizer}, Princeton Physics Department Open House Committee  \hfill 2015 -- 2016
   \item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- 2018
 \end{packed_itemize}
+  \noindent
+Reviewing:
+  \begin{packed_itemize}
+  \item \emph{Journal Reviewer}, \ \scriptsize{Astrophysical Journal, Physical Review {D}, Physical Review {Letters}, Computer Physics Communications, JHEP,  JCAP, Journal of Open Source Software, MLST, MNRAS, Nature Communications Physics}\normalsize
+  \item \emph{Workshop Reviewer},  \scriptsize{NeurIPS Machine Learning and the Physical Sciences Workshop (2019--2023), NeurIPS/ICML AI for Science Workshop (2021--2024), NeurIPS GenBio Workshop (2023), ICLR Workshop on Deep Generative Models for Highly Structured Data (2022), ICLR Workshop on Neural Fields (2023), ICML Workshop on Machine Learning for Astrophysics (2022, 2023), ICML Workshop on Structured Probabilistic Inference \& Generative Modeling (2023, 2024), ICML Workshop on Synergy of Scientific and Machine Learning Modeling (2023), ICML Differentiable Almost Everything Workshop (2024),  Advances in Approximate Bayesian Inference (2024)}\normalsize
+  \item \emph{Reviewer}, \scriptsize{NeurIPS Workshop Selection (2023, 2024), ICML Workshop Selection (2024)}\normalsize
+  \item \emph{Grant Reviewer}, Department of Energy ASCR Leadership Computing Challenge \hfill 2023
+  \item \emph{Grant Review Panelist}, NASA ROSES/Astrophysics Research and Analysis \hfill 2023
+  \end{packed_itemize}
 \vspace{2.0mm}
 
 %%%%%%%%%%%%
@@ -585,7 +627,7 @@ Internal organizing:
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Research Mentorship}}\\
+\large {\sc \Large{\faMagic~Research Mentorship}}\\
 \hline
 \end{tabular*}\vspace{1.mm}
 
@@ -610,7 +652,7 @@ Internal organizing:
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Teaching Experience}}\\
+\large {\sc \Large{\faWpforms~Teaching Experience}}\\
 \hline
 \end{tabular*}\vspace{3.5mm}
 
@@ -660,14 +702,12 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
 %
 %%%%%%%%%%%%%
 
-\newpage
-
 %%%%%%%%%%%%
 %% Work Experience
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{Research Training}}\\
+\large {\sc \Large{\faWrench~Research Training}}\\
 \hline
 \end{tabular*}\vspace{1.mm}
 
@@ -684,7 +724,7 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
-\large {\sc \Large{References}}\\
+\large {\sc \Large{\faGroup~References}}\\
 \hline
 \end{tabular*}\vspace{1.mm}
 
