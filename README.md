@@ -1,3 +1,3 @@
 # CV
 
-LaTeX CV. Compiled version in https://github.com/smsharma/CV/tree/master-pdf.
+LaTeX CV. (Automatically) Compiled version in https://github.com/smsharma/CV/tree/master-pdf.
