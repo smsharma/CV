@@ -24,6 +24,10 @@
 \usepackage{calc}
 \usepackage{microtype}
 
+\usepackage{pgfornament}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
 %%%%%%%%%%%%
 % Last updated
 
@@ -49,7 +53,7 @@
 %%%%%%%%%%%%
 % Spacing
 
-\setstretch{1.15}
+\setstretch{1.155}
 
 %%%%%%%%%%%%
 % Logos
@@ -110,7 +114,7 @@
    \newcommand{\phone}{}%
   }
   {
-   \newcommand{\phone}{\faMobile\hspace{1mm}\href{tel:16099330103}{+1 (609) 933-0103}}%
+   \newcommand{\phone}{~\lightsep~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 (609) 933-0103}}%
   }
 %%%%%%%%%%%%
 
@@ -181,7 +185,7 @@ Cambridge, MA 02139, USA &\\
 
 %&\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
 &\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
-~\lightsep~\phone
+\phone
 ~\lightsep~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
 ~\lightsep~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
 \vspace{0.5mm}
