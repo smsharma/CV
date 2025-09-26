@@ -27,10 +27,10 @@
 \usepackage{pgfornament}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage[many]{tcolorbox}  % Add this to your preamble
 
 %%%%%%%%%%%%
 % Last updated
-
 \AddToShipoutPictureBG*{%
   \AtPageUpperLeft{%
     \put(\LenToUnit{\paperwidth-\oddsidemargin-1.075in},\LenToUnit{-9.5mm}){%
@@ -38,35 +38,24 @@
     }%
   }%
 }
-
 %%%%%%%%%%%%
 % Subtle \mid separator
-
 \newcommand{\lightsep}{\textcolor{gray!80}{$\mid$}}
-
 %%%%%%%%%%%%
 % Link colour
-
 \newcommand\myshade{85}
 \colorlet{linkcolor}{Maroon}
-
 %%%%%%%%%%%%
 % Spacing
-
 \setstretch{1.155}
-
 %%%%%%%%%%%%
 % Logos
-
 \newcommand{\arxivlogo}{\includegraphics[height=1em]{figures/arxiv-logo.pdf}}
 \newcommand{\inspirelogo}{\includegraphics[height=1em]{figures/inspire-logo.pdf}}
 \newcommand{\adslogo}{\includegraphics[height=1em]{figures/ads-logo.pdf}}
 \newcommand{\scholarlogo}{\includegraphics[height=1em]{figures/gscholar-logo.pdf}}
-
-
 %%%%%%%%%%%%
 % Background pic
-
 \newcommand\BackgroundPic{%
 \put(-2mm,1.\paperheight / 2.){
 \parbox[b][\paperheight]{\paperwidth}{%
@@ -75,12 +64,9 @@
 % \transparent{0.16}\includegraphics[width=1.04\paperwidth]{header.png}%
 \vfill
 }}}
-
 \AddToShipoutPicture*{\BackgroundPic}
-
 %%%%%%%%%%%%
 % PDF setup
-
 \ifpdf
   \usepackage[pdftex]{hyperref}
 \else
@@ -97,17 +83,13 @@
     pdfsubject={Siddharth Mishra-Sharma's CV},
     pdfkeywords={}
 }
-
 %%%%%%%%%%%%
 % Toggle for printing phone number
-
 % Get environmental variable ENV
 \newcommand{\getenv}[2][]{%
   \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
   \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
-
 \getenv[\ENV]{ENV}
-
 % Print phone number ONLY if not compiling online GitHub version
 \ifthenelse{\equal{\ENV}{GIT}}
   {
@@ -117,7 +99,6 @@
    \newcommand{\phone}{~\lightsep~\faMobile\hspace{1mm}\href{tel:16099330103}{+1 (609) 933-0103}}%
   }
 %%%%%%%%%%%%
-
 %%%%%%%%%%%%
 % Margin setup
 \oddsidemargin=-0.4in
@@ -127,34 +108,29 @@
 \topmargin=0.12in
 \textheight=9.6in
 %%%%%%%%%%%%
-
 %% Setup the header and footer
 \pagestyle{fancy}
 \fancyhf{}
 \cfoot{Page\ \thepage\ of\ \pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.8pt}
-
 \setlength{\tabcolsep}{0in}
 \hyphenchar\font=-1
-
 % Change bullet size
 \makeatletter
 \renewcommand\@biblabel[1]{\textbullet}
 \makeatother
-
 % Packed itemize environment
 \newenvironment{packed_itemize}{
 \begin{itemize}[label=\raisebox{0.25ex}{\tiny$\bullet$}]
-  \setlength{\itemsep}{4.2pt}
+  \setlength{\itemsep}{4.0pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{itemize}
 }
-
 % Packed enumerate environment
 \newenvironment{packed_enumerate}[1][]{
 \begin{etaremune}[#1]
-  \setlength{\itemsep}{3.7pt}
+  \setlength{\itemsep}{4.0pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}{\end{etaremune}
 }
@@ -164,31 +140,24 @@
  \fancyfoot[C]{\thepage}
  \renewcommand{\headrulewidth}{0.4pt}
  }
-
-
 \newcommand{\SubItem}[1]{
     {\setlength\itemindent{15pt} \item[-] #1}
 }
-
 \begin{document}
 \sloppy
 \raggedbottom
-
 %%%%%%%%%%%%
 %% Heading
-
 \begin{center}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
 &\huge{\textbf{\sc{Siddharth Mishra-Sharma}}}&   \\
-& 77 Massachusetts Ave, 26-648, 
-Cambridge, MA 02139, USA &\\
-
+%& 665 Commonwealth Ave, 
+%Boston, MA 02215, USA &\\
 %&\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
-&\faEnvelopeO\hspace{1mm}\href{mailto:smsharma@mit.edu}{\texttt{smsharma@mit.edu}} 
+&\faEnvelopeO\hspace{1mm}\href{mailto:siddharthmishra19@gmail.com}{\texttt{siddharthmishra19@gmail.com}} 
 \phone
 ~\lightsep~\faGlobe\hspace{1mm}\href{https://smsharma.io}{\texttt{smsharma.io}} 
 ~\lightsep~\faGithub\hspace{1mm}\href{https://github.com/smsharma}{\texttt{github.com/smsharma}} 
-\vspace{0.5mm}
 \\ 
 
 \hline\hline
@@ -196,72 +165,72 @@ Cambridge, MA 02139, USA &\\
 \end{tabular*}
 \end{center}
 
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
-
 %%%%%%%%%%%%
 %% Appointments 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faSuitcase~Appointments}}\\
 \hline
-\end{tabular*}
+\end{tabular*}\vspace{3mm}
 
 % Anthropic
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{Anthropic} & \textbf {San Francisco, CA, USA}\\
+\href{https://www.anthropic.com/}{\textbf{Anthropic}} & \textbf {San Francisco, CA, USA}\\
 \emph{Member of Technical Staff}  & {Nov. 2024 -- Present}\\
-\emph{Resident}  & {Jul. 2024 -- Oct. 2024}\vspace{2mm}\\
+\emph{Resident}  & {Jul. 2024 -- Oct. 2024}\\
 \end{tabular*}
 
+\vspace{2mm}
+
 % BU
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{Boston University} & \textbf {Boston, MA, USA}\\
 \href{https://www.bu.edu/cds-faculty/profile/siddharth-mishra-sharma/}{Faculty of Computing \& Data Sciences}\\
-\emph{Assistant Professor of Computing \& Data Sciences and Physics}  & {Starting in Jul. 2025} \\
-\emph{Visiting Researcher}  & {Jun. 2024 -- Present}\vspace{2mm}\\
+\emph{Assistant Professor of Computing \& Data Sciences and Physics}  & {Sep. 2025 -- Present} \\
+%\emph{Visiting Researcher}  & {Jun. 2024 -- Aug. 2025}\\
 \end{tabular*}
 
+\vspace{2mm}
+
 % MIT
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 %\textbf{Massachusetts Institute of Technology}, \small{Center for Theoretical Physics}  & \textbf {Cambridge, MA, USA}\\
 %\textbf{Harvard University}, \small{Department of Physics} & \textbf {Cambridge, MA, USA}\\
 \textbf{Massachusetts Institute of Technology} & \textbf {Cambridge, MA, USA}\\
 \textbf{Harvard University} & \textbf {Cambridge, MA, USA}\\
 \href{https://iaifi.org/}{NSF AI Institute for Artificial Intelligence and Fundamental Interactions}\\
-\emph{IAIFI Fellow}  & {Sep. 2021 -- Jul. 2024}\vspace{2mm}\\
+\emph{IAIFI Fellow}  & {Sep. 2021 -- Jul. 2024}\\
 \end{tabular*}
 
+\vspace{2mm}
+
 % NYU
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{New York University} & \textbf {New York, NY, USA}\\
 \href{http://www.ccpp.nyu.edu/index.php}{Center for Cosmology and Particle Physics}\\
-\emph{Postdoctoral Associate}  & {Sep. 2018 -- Aug. 2021} \\  
-\end{tabular*}
-\vspace{2.0mm}
+\emph{Postdoctoral Associate}  & {Sep. 2018 -- Aug. 2021} 
+\end{tabular*} 
 
 %%%%%%%%%%%%
 %% Education 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faGraduationCap~Education}}\\
 \hline
-\end{tabular*}
+\end{tabular*}\vspace{3mm}
 
 % Princeton
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{Princeton University}  & \textbf {Princeton, NJ, USA}\vspace{0mm}\\
 {Ph.D. in Theoretical Physics}  & {Sep. 2013 -- Aug. 2018} \vspace{.0mm} \\  
@@ -271,9 +240,10 @@ Cambridge, MA 02139, USA &\\
 
 \end{tabular*}
 
+\vspace{2mm}
+
 % Cambridge
-\noindent 
-\\
+\noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \textbf{University of Cambridge}  & \textbf {Cambridge, UK}\vspace{0mm}\\
 {Part III of the Mathematical Tripos (M.Math.)} & {Oct. 2012 -- Jun. 2013}\vspace{0.0mm}\\ 
@@ -282,62 +252,91 @@ Cambridge, MA 02139, USA &\\
 % \small{\emph{Specializing in Physics}}\vspace{1mm}\\
 \end{tabular*}
 %\small{M.A. (Cantab) awarded in May 2016. \small{\emph{Note that this is an academic rank that may be given six years after the end of a first term at the University of Cambridge, and is not a postgraduate qualification.}}}\vspace{0mm}\\
-\vspace{2.0mm}
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
-%% Publications 
+%% Papers (Renamed from "Publications") 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\large {\sc \Large{\faBook~Publications}} & 
+\large {\sc \Large{\faBook~Papers}} & 
 \href{https://arxiv.org/a/mishrasharma_s_1.html}{\arxivlogo}  \
 \href{https://scholar.google.com/citations?hl=en&user=hJVjhlwAAAAJ&view_op=list_works&sortby=pubdate}{\scholarlogo}  \ 
 \href{https://inspirehep.net/authors/1394493}{\inspirelogo}  \ 
 \href{https://ui.adsabs.harvard.edu/search/p_=0&q=author%3A%22Mishra-Sharma%2C%20Siddharth%22&sort=date%20desc%2C%20bibcode%20desc}{\adslogo} \\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}\vspace{3mm}
+
+%%%%%%%%%%%%%
+%%% Research Interests
+%
+%\begin{tcolorbox}[
+%    enhanced,
+%    left=10pt,
+%    right=10pt,
+%    top=10pt,
+%    bottom=10pt,
+%    boxrule=0.5pt,
+%    colframe=Maroon!40,
+%    colback=black!0.8, 
+%    arc=1mm,
+%    boxsep=0pt,
+%    after skip=2mm,
+%    title={\sc{(Acacemic) Research Interests}:~},
+%    attach title to upper,
+%    fonttitle=\normalfont,
+%    coltitle=black]
+%{\emph {\small Intersection of AI and physics; neural approaches to simulation-based inference, scalable generative modeling for scientific datasets, probabilistic and differentiable programming, symmetry-preserving data processing; synthesizing data-driven approaches that leverage scale with physics-informed methods that incorporate mechanistic understanding and inductive biases.}}
+%\end{tcolorbox}
+%
+%\vspace{2.0mm}
+%
+%
+%%%%%%%%%%%%%
 
 \noindent
 Primary contributions: \emph{(Note: where indicated with an asterisk\,$^*$, authors are listed in alphabetical order as per the standard in that field. $^{\dagger}$denotes equal contribution.)}
 
-\begin{packed_enumerate}[start=48]
+\begin{packed_enumerate}[start=56]
 
-%- Simulate what you want
-%- Overconfident NPTF
-%- NPTF SVI
-%- Evidences and biases
+\item A. Akhmetzanova, C. Cuesta-Lazaro, \underline{S. Mishra-Sharma}, \emph{Detecting Model Misspecification in Cosmology with Scale-Dependent Normalizing Flows}, Under review at Mach.Learn.Sci.Tech.  \href{https://arxiv.org/abs/2508.05744}{[arXiv:2508.05744]}
+
+\item T. Nguyen, C. Modi, L. Y. Aaron Yung, R. Somerville, \underline{S. Mishra-Sharma}, \emph{Generating Dark Matter Halo Merger Trees with Graph Generative Models}, Accepted at Mon.Not.Roy.Astron.Soc. (MNRAS) \href{https://arxiv.org/abs/2507.10652}{[arXiv:2507.10652]}
+
+\item $^{\dagger}$S. Marks, $^{\dagger}$J. Treutlein, T. Bricken, J. Lindsey, J. Marcus, \underline{S. Mishra-Sharma}  et al., \emph{Auditing language models for hidden objectives} \href{https://arxiv.org/abs/2503.10965}{[arXiv:2503.10965]} \href{https://assets.anthropic.com/m/317564659027fb33/original/Auditing-Language-Models-for-Hidden-Objectives.pdf}{[Paper]}
+\item T. Nguyen, J. Read, L. Necib, \underline{S. Mishra-Sharma}, C.A. Faucher-Giguère, A. Wetzel, \emph{Trial by FIRE: Probing the dark matter density profile of dwarf galaxies with GraphNPE}, Accepted at MNRAS \href{https://arxiv.org/abs/2503.03812}{[arXiv:2503.03812]}
+
+\item \underline{S. Mishra-Sharma}, T. Bricken, J. Lindsey, A. Jermyn, J. Marcus, K. Rivoire, C. Olah, T. Henighan, \emph{Insights on crosscoder model diffing}, Transformer Circuits Thread, 2025. \href{https://transformer-circuits.pub/2025/crosscoder-diffing-update/index.html}{[Link]}
+\item T. Bricken, \underline{S. Mishra-Sharma}, J. Marcus, A. Jermyn, C. Olah, K. Rivoire, T. Henighan, \emph{Stage-Wise Model Diffing}, Transformer Circuits Thread, 2024. \href{https://transformer-circuits.pub/2024/model-diffing/index.html}{[Link]}
+\item T. Bricken, J. Marcus, \underline{S. Mishra-Sharma}, M. Tong, E. Perez, M. Sharma, K. Rivoire, T. Henighan, \emph{Using Dictionary Learning Features as Classifiers}, Transformer Circuits Thread, 2024. \href{https://transformer-circuits.pub/2024/features-as-classifiers/index.html}{[Link]}
+
+\item C. Cuesta-Lazaro, A.E. Bayer, M.S. Albergo, \underline{S. Mishra-Sharma}, C. Modi, D. Eisenstein, \emph{Joint cosmological parameter inference and initial condition reconstruction with Stochastic Interpolants}, Machine Learning and the Physical Sciences Workshop at the 38th Conference on Neural Information Processing Systems (NeurIPS 2024)  {\textbf{[Spotlight Oral]}}\,\href{https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_162.pdf}{[Paper]}
   
-\item E.D. Ramirez, Y. Sun, M.R. Buckley, \underline{S. Mishra-Sharma}, T.R. Slatyer, \emph{Inferring the Morphology of the Galactic Center Excess with Gaussian Processes} \href{https://arxiv.org/abs/2410.21367}{[arXiv:2410.21367]}
-
-\item J. Balla, \underline{S. Mishra-Sharma}, C. Cuesta-Lazaro, T. Jaakkola, T. Smidt, \emph{A Cosmic-Scale Benchmark for Symmetry-Preserving Data Processing}, Accepted at Proceedings of Machine Learning Research (PMLR) Volume on Symmetry and Geometry in Neural Representations; Accepted at Learning on Graphs Conference 2024 (Extended Abstract; {\textbf{Spotlight Oral}}) \href{https://arxiv.org/abs/2410.20516}{[arXiv:2410.20516]}
-
+\item E.D. Ramirez, Y. Sun, M.R. Buckley, \underline{S. Mishra-Sharma}, T.R. Slatyer, \emph{Inferring the Morphology of the Galactic Center Excess with Gaussian Processes}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.111.063065}{Phys.Rev. \textbf{D111} (2025) 063065} \href{https://arxiv.org/abs/2410.21367}{[arXiv:2410.21367]}
+\item J. Balla, \underline{S. Mishra-Sharma}, C. Cuesta-Lazaro, T. Jaakkola, T. Smidt, \emph{A Cosmic-Scale Benchmark for Symmetry-Preserving Data Processing}, Accepted at Proceedings of Machine Learning Research (PMLR) Volume on Symmetry and Geometry in Neural Representations; Learning on Graphs Conference 2024  {\textbf{[Spotlight Oral]}}\,\href{https://arxiv.org/abs/2410.20516}{[arXiv:2410.20516]}
 \item T. Nguyen, F. Villaescusa-Navarro, \underline{S. Mishra-Sharma} et al., \emph{How DREAMS are made: Emulating Satellite Galaxy and Subhalo Populations with Diffusion Models and Point Clouds}, Under review at Astrophys.J. \href{https://arxiv.org/abs/2409.02980}{[arXiv:2409.02980]}
+\item $^{\dagger}$G. Zhang, $^{\dagger}$T. Helfer, A. Gagliano, \underline{S. Mishra-Sharma}, V.A. Villar, \emph{Maven: A Multimodal Foundation Model for Supernova Science}, NeurIPS 2024 Foundation Models for Science Workshop, NeurIPS 2024 Workshop on Time Series in the Age of Large Models {\textbf{[Spotlight Oral} and \textbf{Best Paper Runner-Up Award]}}, NeurIPS 2024 Workshop on Self-Supervised Learning; \href{https://iopscience.iop.org/article/10.1088/2632-2153/ad990d}{Mach.Learn.Sci.Tech. \textbf{5} (2025) 045069} \href{https://arxiv.org/abs/2408.16829}{[arXiv:2408.16829]}
+\item A. Delaunoy, M. de la Brassinne Bonardeaux, \underline{S. Mishra-Sharma}, G. Louppe, \emph{Low-Budget Simulation-Based Inference with Bayesian Neural Networks} \href{https://arxiv.org/abs/2408.15136}{[arXiv:2408.15136]}
+\item $^*$C. Giovanetti, M. Lisanti, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman,
+\emph{LINX: A Fast, Differentiable, and Extensible Big Bang Nucleosynthesis Package},
+\href{https://journals.aps.org/prd/abstract/10.1103/f3tj-r882}{Phys.Rev. \textbf{D112} (2025) 063531}
+\href{https://arxiv.org/abs/2408.14538}{[arXiv:2408.14538]}
 
-\item $^{\dagger}$G. Zhang, $^{\dagger}$T. Helfer, A. Gagliano, \underline{S. Mishra-Sharma}, V.A. Villar, \emph{Maven: A Multimodal Foundation Model for Supernova Science}, Accepted at NeurIPS 2023 Foundation Models for Science Workshop, NeurIPS 2023 Workshop on Time Series in the Age of Large Models {\textbf{[Spotlight Oral]}}, NeurIPS 2024 Workshop on Self-Supervised Learning; Under review at Mach.Learn.Sci.Tech \href{https://arxiv.org/abs/2408.16829}{[arXiv:2408.16829]}
-
-\item A. Delaunoy, M. de la Brassinne Bonardeaux, \underline{S. Mishra-Sharma}, G. Louppe, \emph{Low-Budget Simulation-Based Inference with Bayesian Neural Networks}, Under review at ICLR 2024 \href{https://arxiv.org/abs/2408.15136}{[arXiv:2408.15136]}
-
-\item $^*$C. Giovanetti, M. Lisanti, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman, \emph{LINX: A Fast, Differentiable, and Extensible Big Bang Nucleosynthesis Package}, Under review at Phys.Rev. D \href{https://arxiv.org/abs/2408.14538}{[arXiv:2408.14538]}
-
-  \item $^*$C. Giovanetti, M. Lisanti, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman, \emph{Cosmological Parameter Estimation with a Joint-Likelihood Analysis of the Cosmic Microwave Background and Big Bang Nucleosynthesis}, Under review at Phys.Rev.Lett. \href{https://arxiv.org/abs/2408.14531}{[arXiv:2408.14531]}
-
-  \item N. Sabti, R. Reddy, J.B. Muñoz, \underline{S. Mishra-Sharma}, T. Youn, \emph{A Generative Modeling Approach to Reconstructing 21-cm Tomographic Data}, Under review at Mach.Learn.Sci.Tech \href{https://arxiv.org/abs/2407.21097}{[arXiv:2407.21097]}
-
-  \item \underline{S. Mishra-Sharma}, Y. Song, J. Thaler, \emph{PAPERCLIP: Associating Astronomical Observations and Natural Language with Multi-Modal Models}, Accepted at \href{https://colmweb.org/}{Conference on Language Modeling (COLM 2024)}  \href{https://arxiv.org/abs/2403.08851}{[arXiv:2403.08851]}
-
+\item $^*$C. Giovanetti, M. Lisanti, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman,
+\emph{Cosmological Parameter Estimation with a Joint-Likelihood Analysis of the Cosmic Microwave Background and Big Bang Nucleosynthesis},
+\href{https://journals.aps.org/prd/abstract/10.1103/wspy-s948}{Phys.Rev. \textbf{D112} (2025) 063530}
+\href{https://arxiv.org/abs/2408.14531}{[arXiv:2408.14531]}
+  \item N. Sabti, R. Reddy, J.B. Muñoz, \underline{S. Mishra-Sharma}, T. Youn, \emph{A Generative Modeling Approach to Reconstructing 21-cm Tomographic Data}, \href{https://iopscience.iop.org/article/10.1088/2632-2153/adb19c}{Mach.Learn.Sci.Tech. \textbf{6} (2025) 015039}  \href{https://arxiv.org/abs/2407.21097}{[arXiv:2407.21097]}
+  \item \underline{S. Mishra-Sharma}, Y. Song, J. Thaler, \emph{PAPERCLIP: Associating Astronomical Observations and Natural Language with Multi-Modal Models}, \href{https://colmweb.org/AcceptedPapers.html}{Conference on Language Modeling (COLM 2024)}  \href{https://arxiv.org/abs/2403.08851}{[arXiv:2403.08851]}
   \item M.M. Ivanov, $^{\dagger}$C. Cuesta-Lazaro, $^{\dagger}$\underline{S. Mishra-Sharma}, $^{\dagger}$A. Obuljen, $^{\dagger}$M. Toomey, \emph{Full-shape analysis with simulation-based priors: constraints on single field inflation from BOSS}, Accepted at Phys.Rev. {D} \href{https://arxiv.org/abs/2402.13310}{[arXiv:2402.13310]}
-
   \item $^*$L. Heinrich, \underline{S. Mishra-Sharma}, C. Pollard, P. Windischhofer, \emph{Hierarchical Neural Simulation-Based Inference Over Event Ensembles}, \href{https://openreview.net/forum?id=Jy2IgzjoFH&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DTMLR%2FAuthors%23your-submissions)}{Transactions on Machine Learning Research (TMLR)} \href{https://arxiv.org/abs/2306.12584}{[arXiv:2306.12584]}
-
   \item $^{\dagger}$\underline{S. Mishra-Sharma}, $^{\dagger}$C. Cuesta-Lazaro, \emph{A point cloud approach to generative modeling for galaxy surveys at the field level}
   \begin{packed_itemize}
       \item  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.123531}{Phys.Rev. {D}} \href{https://arxiv.org/abs/2311.17141}{[arXiv:2311.17141]}
       \item {Machine Learning for Astrophysics Workshop at the Fortieth International Conference on Machine Learning (ICML 2023)} \href{https://ml4astro.github.io/icml2023/}{\textbf{[Spotlight Oral]}} \href{https://ml4astro.github.io/icml2023/assets/59.pdf}{[Paper]} 
        \end{packed_itemize}
-
   \item $^*$\underline{S. Mishra-Sharma}, T.R. Slatyer, Y. Sun, Y. Wu, \emph{Disentangling gamma-ray observations of the Galactic Center using differentiable probabilistic programming}, {Machine Learning for Astrophysics Workshop at the Fortieth International Conference on Machine Learning (ICML 2023)} \href{https://ml4astro.github.io/icml2023/}{\textbf{[Spotlight Oral]}} \href{https://ml4astro.github.io/icml2023/assets/52.pdf}{[Paper]}
-
   \item A. Akhmetzanova, \underline{S. Mishra-Sharma}, C. Dvorkin, \emph{Data Compression and Inference in Cosmology with Self-Supervised Machine Learning}
   \begin{packed_itemize}
       \item \href{https://doi.org/10.1093/mnras/stad3646}{Mon.Not.Roy.Astron.Soc. 527 (2023) 7459} \href{https://arxiv.org/abs/2308.09751}{[arXiv:2308.09751]}
@@ -345,7 +344,6 @@ Primary contributions: \emph{(Note: where indicated with an asterisk\,$^*$, auth
        \end{packed_itemize}
       
   \item G. Zhang, \underline{S. Mishra-Sharma}, C. Dvorkin, \emph{Inferring subhalo effective density slopes from strong lensing observations with neural likelihood-ratio estimation}, \href{https://doi.org/10.1093/mnras/stac3014}{Mon.Not.Roy.Astron.Soc. 517 (2022) 4317} \href{https://arxiv.org/abs/2208.13796}{[arXiv:2208.13796]}
-
   \item T. Nguyen, \underline{S. Mishra-Sharma}, R. Williams, L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks}
   \begin{packed_itemize}
       \item {\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.043015}{Phys.Rev. \textbf{D107} (2023) 043015}} \href{https://arxiv.org/abs/2208.12825}{[arXiv:2208.12825]}
@@ -355,64 +353,42 @@ Primary contributions: \emph{(Note: where indicated with an asterisk\,$^*$, auth
   \item \underline{S. Mishra-Sharma}, G. Yang, \emph{Strong Lensing Source Reconstruction Using Continuous Neural Fields}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} \href{https://ml4astro.github.io/icml2022/}{\textbf{[Spotlight Oral]}} \href{https://arxiv.org/abs/2206.14820}{[arXiv:2206.14820]}
    
   % \item $^*$T. Nguyen, \underline{S. Mishra-Sharma} and L. Necib, \emph{Uncovering dark matter density profiles in dwarf galaxies with graph neural networks}, {Machine Learning for Astrophysics Workshop at the Thirty-ninth International Conference on Machine Learning (ICML 2022)} \textbf{[Spotlight Oral]} \href{https://ml4astro.github.io/icml2022/assets/38.pdf}{[Paper]}
-
   \item $^*$A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, M. Pospelov, J.T. Ruderman, \emph{A Stimulating Explanation of the Extragalactic Radio Background}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.123033}{Phys.Rev. \textbf{D107} (2023) 123033} \href{https://arxiv.org/abs/2206.07713}{[arXiv:2206.07713]}
-
   \item  \underline{S. Mishra-Sharma}, K. Cranmer, \emph{A neural simulation-based inference approach for characterizing the Galactic Center $\gamma$-ray excess}
     \begin{packed_itemize}
       \item {\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.063017}{Phys.Rev. \textbf{D105} (2022) 063017} \href{https://arxiv.org/abs/2110.06931}{[arXiv:2110.06931]}}
       \item {Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}}
     \end{packed_itemize}
-
 %  \item  $^*$\underline{S. Mishra-Sharma} and K. Cranmer, \emph{Characterizing $\gamma$-ray maps of the Galactic Center with neural density estimation}, Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}
-
   \item \underline{S. Mishra-Sharma}, \emph{Inferring dark matter substructure with astrometric lensing beyond the power spectrum}  
   \begin{packed_itemize}
     \item {\href{https://doi.org/10.1088/2632-2153/ac494a}{Mach.Learn.Sci.Tech. \textbf{3} (2022) 01LT03} \,\href{https://arxiv.org/abs/2110.01620}{[arXiv:2110.01620]}}
     \item {{Machine Learning and the Physical Sciences Workshop at the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)} \href{https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_22_poster.png}{[Poster]}}
     \end{packed_itemize}
-
   \item\underline{S. Mishra-Sharma}, K. Cranmer, \emph{Semi-parametric $\gamma$-ray modeling with Gaussian processes and variational inference}, {Machine Learning and the Physical Sciences Workshop at the 34rd Conference on Neural Information Processing Systems (NeurIPS 2020)} \href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20.pdf}{[Paper]}\,\href{https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_20_poster.pdf}{[Poster]}\,\href{https://arxiv.org/abs/2010.10450}{[arXiv:2010.10450]} 
-
   \item $^*$A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, M. Pospelov, J.T. Ruderman, A. Urbano, \emph{Edges and Endpoints in 21-cm Observations from Resonant Photon Production},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.011102}{Phys.Rev.Lett. \textbf{127} (2021) 011102}   \href{https://arxiv.org/abs/2009.03899}{[arXiv:2009.03899]}
-
   \item J.J. Somalwar, L.J. Chang, \underline{S. Mishra-Sharma}, M. Lisanti, \emph{Harnessing the Population Statistics of Subhalos to Search for Annihilating Dark Matter}, \href{https://iopscience.iop.org/article/10.3847/1538-4357/abc87d}{Astrophys.J. \textbf{906} (2021) no.1, 57} \href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
-
   \item $^*$A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman, \emph{Modeling Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.103533}{Phys.Rev. \textbf{D102} (2020) 103533}   \href{https://arxiv.org/abs/2004.06733}{[arXiv:2004.06733]}
-
   \item \underline{S. Mishra-Sharma}, K. Van Tilburg, N. Weiner, \emph{Power of Halometry}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023026}{Phys.Rev. \textbf{D102} (2020) 023026} [\textbf{Editors' Suggestion} and \textbf{Featured} in \emph{Physics}; \href{https://physics.aps.org/articles/v13/s98}{Synopsis}]  \href{https://arxiv.org/abs/2003.02264}{[arXiv:2003.02264]}
-
   \item M. Buschmann, N.L. Rodd, B.R. Safdi, L.J. Chang, \underline{S. Mishra-Sharma}, M. Lisanti, O. Macias \emph{Foreground Mismodeling and the Point Source Explanation of the Fermi Galactic Center Excess},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.023023}{Phys.Rev. \textbf{D102} (2020) 023023} \href{https://arxiv.org/abs/2002.12373}{[arXiv:2002.12373]} 
-
   \item $^*$A. Caputo, H. Liu, \underline{S. Mishra-Sharma}, J.T. Ruderman, \emph{Dark Photon Oscillations in Our Inhomogeneous Universe}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.221303}{Phys.Rev.Lett. \textbf{125} (2020) 221303}  \href{https://arxiv.org/abs/2002.05165}{[arXiv:2002.05165]}
-
   \item J. Brehmer, K. Cranmer, \underline{S. Mishra-Sharma}, F. Kling, G. Louppe, \emph{Mining gold: Improving simulation-based inference with latent information}, {Machine Learning and the Physical Sciences Workshop at the 33rd Conference on Neural Information Processing Systems (NeurIPS 2019)} \href{https://ml4physicalsciences.github.io/files/NeurIPS_ML4PS_2019_16.pdf}{[Paper]}
-
   \item $^{*\dagger}$J. Brehmer, $^\dagger$\underline{S. Mishra-Sharma}, J. Hermans, G. Louppe, K. Cranmer, \emph{Mining for Dark Matter Substructure: Inferring subhalo population properties from strong lenses with machine learning}, \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab4c41}{Astrophys.J. \textbf{886} (2019) no.1, 49} \href{https://arxiv.org/abs/1909.02005}{[arXiv:1909.02005]}
-
   \item L.J. Chang, \underline{S. Mishra-Sharma}, M. Lisanti, M. Buschmann, N.L. Rodd, B.R. Safdi, \emph{Characterizing the Nature of the Unresolved Point Sources in the Galactic Center: An Assessment of Systematic Uncertainties},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.023014}{Phys.Rev. \textbf{D101} (2020) 023014} \href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}, 
-
   \item $^*$L.J. Chang, M. Lisanti, \underline{S. Mishra-Sharma}, \emph{Search for Dark Matter Annihilation in the Milky Way Halo}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.123004}{Phys.Rev. \textbf{D98} (2018) 123004} \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}
-
   \item \underline{S. Mishra-Sharma}, D. Alonso, J. Dunkley, \emph{Neutrino masses and beyond-$\Lambda$CDM cosmology with LSST and future CMB experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.123544}{Phys.Rev. \textbf{D97} (2018) 123544}  \href{https://arxiv.org/abs/1803.07561}{[arXiv:1803.07561]}
-
   \item $^*$R. Bartels, D. Hooper, T. Linden, \underline{S. Mishra-Sharma}, N.L. Rodd, B.R. Safdi, T.R. Slatyer, \emph{Comment on ``Characterizing the population of pulsars in the Galactic bulge with the
   {\it Fermi} Large Area Telescope'' [arXiv:1705.00009\MakeLowercase{v}1]}, \href{https://www.sciencedirect.com/science/article/pii/S2212686418300268}{Phys.Dark Univ. \textbf{20} (2018) 88-94} \href{https://arxiv.org/abs/1710.10266}{[arXiv:1710.10266]}
-
   \item $^*$M. Lisanti, \underline{S. Mishra-Sharma}, N.L. Rodd, B.R. Safdi, \emph{Mapping Extragalactic Dark Matter Annihilation with Galaxy Surveys: A Systematic Study of Stacked Group Searches},  \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.063005}{Phys.Rev. \textbf{D97} (2018) 063005} \href{https://arxiv.org/abs/1709.00416}{[arXiv:1709.00416]}
-
   \item $^*$M. Lisanti, \underline{S. Mishra-Sharma}, N.L. Rodd, B.R. Safdi, \emph{Search for Dark Matter Annihilation in Galaxy Groups},  \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.101101}{Phys.Rev.Lett. \textbf{120} (2018) 101101} \href{https://arxiv.org/abs/1708.09385}{[arXiv:1708.09385]}
-
   \item $^*$T. Cohen, M. Lisanti, H. K. Lou, \underline{S. Mishra-Sharma}, \emph{LHC Searches for Dark Sector Showers},  \href{https://link.springer.com/article/10.1007/JHEP11(2017)196}{JHEP \textbf{11}, 196 (2017)}  \href{https://arxiv.org/abs/1707.05326}{ [arXiv:1707.05326]}
-
   \item $^*$\underline{S. Mishra-Sharma}, N.L. Rodd, B.R. Safdi, \emph{NPTFit: A code package for Non-Poissonian Template Fitting},  \href{http://iopscience.iop.org/article/10.3847/1538-3881/aa6d5f/meta}{Astron.J. \textbf{153} (2017) no.6, 253}  \href{https://arxiv.org/abs/1612.03173}{ [arXiv:1612.03173]}
-
   \item $^*$Y. Kahn, G. Krnjaic, \underline{S. Mishra-Sharma}, T.M.P. Tait, \emph{Light Weakly Coupled Axial Forces: Models, Constraints, and Projections},  \href{https://link.springer.com/article/10.1007%2FJHEP05%282017%29002}{JHEP \textbf{05}, 002 (2017)}  \href{https://arxiv.org/abs/1609.09072}{[arXiv:1609.09072]}
-
   \item $^*$M. Lisanti, \underline{S. Mishra-Sharma}, L. Necib, B.R. Safdi, \emph{Deciphering Contributions to the Extragalactic Gamma-Ray Background from 2 GeV to 2 TeV},  \href{http://iopscience.iop.org/article/10.3847/0004-637X/832/2/117/meta}{Astrophys.J. \textbf{832} (2016) no.2, 117} \href{https://arxiv.org/abs/1606.04101}{[arXiv:1606.04101]}
-
   \item $^*$S.K. Lee, M. Lisanti, \underline{S. Mishra-Sharma}, B.R. Safdi, \emph{Modulation Effects in Dark Matter-Electron Scattering Experiments}, \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.083517}{Phys.Rev. \textbf{D92} (2015) 083517} \href{https://arxiv.org/abs/1508.07361}{[arXiv:1508.07361]}
 \end{packed_enumerate}
+
+\vspace{2mm}
 
 \noindent
 Contributions to white papers and as part of larger collaborations:
@@ -435,22 +411,24 @@ Contributions to white papers and as part of larger collaborations:
 
   \item DarkSide Collaboration (including \underline{S. Mishra-Sharma}), \emph{Low-Mass Dark Matter Search with the DarkSide-50 Experiment}, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.081307}{Phys.Rev.Lett. \textbf{121} (2018) 081307}  \href{https://arxiv.org/abs/1802.06994}{[arXiv:1802.06994]}
 \end{packed_enumerate}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Talks 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faBullhorn~Seminars, Colloquia, and Conference Talks}}\\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}\vspace{3mm}
 
 \noindent
 Invited talks:
 \begin{packed_itemize}
+  \item UCSB Joint HEX-HET \hfill Santa Barbara, CA, Nov. 2025
+  \item ICML 2025 Colocated ML4Astro Workshop (Invited panel) \hfill Vancouver, BC, Jul. 2025
+  \item Stanford Center for Decoding the Universe Annual Conference (Invited panel) \hfill Stanford, CA, Jun. 2025
   \item UC Santa Barbara Computer Science Colloquium \hfill Santa Barbara, CA, Jun. 2024
   \item KITP Program: Cosmic Signals of Dark Matter Physics \hfill Santa Barbara, CA, Jun. 2024
   \item European AI for Fundamental Physics Conference, Plenary \hfill Amsterdam, Netherlands, Apr. 2024
@@ -515,6 +493,8 @@ Invited talks:
   \item MIT BSM Journal Club \hfill Boston, MA, Nov. 2016
 \end{packed_itemize}
 
+\vspace{2mm}
+
 \noindent
 Internal talks:
 \begin{packed_itemize}
@@ -526,6 +506,8 @@ Internal talks:
   \item NYU CCPP Brown Bag Seminar \hfill New York, NY, Apr. 2019
   \item Princeton Pheno \& Vino Seminar \hfill Princeton, NJ, Apr. 2017
 \end{packed_itemize}
+
+\vspace{2mm}
 
 \noindent
 Contributed talks:
@@ -544,18 +526,17 @@ Contributed talks:
   \item Gamma Rays and Dark Matter Workshop \hfill Obergurgl, Austria, Dec. 2015
   \item Phenomenology Symposium (Pheno) 2015 \hfill Pittsburgh, PA, May 2015
 \end{packed_itemize}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Prizes and Honours 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faTrophy~Awards and Honors}}\\
 \hline
-\end{tabular*}\vspace{1.mm}
+\end{tabular*}\vspace{1mm}
 
 \begin{packed_itemize}
   \item \href{https://datascience.uchicago.edu/research/postdoctoral-programs/rising-stars-in-data-science-2/2023-rising-stars/}{Rising Stars in Data Science}, \emph{University of Chicago DSI and UCSD HDSI} \hfill 2023 \\ \emph{\small Focuses on celebrating and fast tracking the careers of exceptional data scientists at a critical \\ inflection point in their career}
@@ -568,18 +549,17 @@ Contributed talks:
   \item Peter Scheuer Scholarship in Natural Sciences, \emph{Peterhouse, University of Cambridge} \hfill 2011, 2012 \\ \emph{\small Awarded for exceptional academic performance in the Cambridge second and third year Tripos examinations}
   \item Senior Academic Scholarship, \emph{Peterhouse, University of Cambridge} \hfill 2010\\ \emph{\small Awarded for exceptional academic performance in the Cambridge first year Tripos examinations}
 \end{packed_itemize}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Broader impact
- 
+
+\vspace{3mm}
+
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faUsers~Broader Impact and Organizing}}\\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}\vspace{3mm}
 
 \noindent
 External organizing:
@@ -607,11 +587,12 @@ External organizing:
       \end{minipage}%
       \begin{minipage}[t]{0.2\linewidth}
       \begin{flushright}
-      2022, 2023, 2024
+      2022, 2023, 2024, 2025
       \end{flushright}
       \end{minipage}  % \vspace{1.5mm}
-
 \end{packed_itemize}
+
+\vspace{2mm}
 
   \noindent
 Internal organizing:
@@ -629,30 +610,33 @@ Internal organizing:
   \item \emph{Organizer}, Princeton Physics Department Open House Committee  \hfill 2015 -- 2016
   \item \emph{Chair}, Princeton Physics Graduate Student Council \hfill 2015 -- 2018
 \end{packed_itemize}
+
+\vspace{2mm}
+
   \noindent
 Reviewing/Editorial/Advisory:
   \begin{packed_itemize}
+  \item NASA Cosmic Origin Program AI/ML Science and Technology Interest Groups Leadership Council \hfill 2025 -- Present
   \item \emph{Editorial Board}, Machine Learning: Science and Technology (MLST) \hfill 2024 -- Present
 %  \item \emph{Advisory Board}, UKRI Center for Doctoral Training in AI for Decision Making in Complex Systems (Universities of Cambridge and Manchester) \hfill 2024 -- Present
-  \item \emph{Journal Reviewer}, \ \scriptsize{Astrophysical Journal, Physical Review {D}, Physical Review {Letters}, Computer Physics Communications, JHEP,  JCAP, Journal of Open Source Software, MLST, MNRAS, Nature Communications Physics}\normalsize
-    \item \emph{Conference Reviewer}, \scriptsize{NeurIPS Workshop Selection (2023, 2024), ICML Workshop Selection (2024), ICLR (2024)}\normalsize
-  \item \emph{Workshop Reviewer},  \scriptsize{NeurIPS Machine Learning and the Physical Sciences Workshop (2019--2024), NeurIPS/ICML AI for Science Workshop (2021--2024), NeurIPS GenBio Workshop (2023), ICLR Workshop on Deep Generative Models for Highly Structured Data (2022), ICLR Workshop on Neural Fields (2023), ICML Workshop on Machine Learning for Astrophysics (2022, 2023), ICML Workshop on Structured Probabilistic Inference \& Generative Modeling (2023, 2024), ICML Workshop on Synergy of Scientific and Machine Learning Modeling (2023), ICML Differentiable Almost Everything Workshop (2024),  Advances in Approximate Bayesian Inference (2024)}\normalsize
+  \item \emph{Journal Reviewer}, \ \scriptsize{Astrophysical Journal, Computer Physics Communications, JCAP, JHEP,  Journal of Open Source Software, MLST, MNRAS, Nature, Nature Communications Physics, Physical Review {D}, Physical Review {Letters}, Reports on Progress in Physics}\normalsize
+    \item \emph{Conference Reviewer}, \scriptsize{NeurIPS Workshop Selection (2023--2025), ICML Workshop Selection (2024, 2025), ICLR (2025), COLM (2025)}\normalsize
+  \item \emph{Workshop Reviewer},  \scriptsize{NeurIPS Machine Learning and the Physical Sciences Workshop (2019--2024), NeurIPS/ICML AI for Science Workshop (2021--2024), NeurIPS GenBio Workshop (2023), ICLR Workshop on Deep Generative Models for Highly Structured Data (2022), ICLR Workshop on Neural Fields (2023), ICML Workshop on Machine Learning for Astrophysics (2022, 2023), ICML Workshop on Structured Probabilistic Inference \& Generative Modeling (2023, 2024), ICML Workshop on Synergy of Scientific and Machine Learning Modeling (2023), ICML Differentiable Almost Everything Workshop (2024),  Advances in Approximate Bayesian Inference (2024, 2025), ICLR Workshop on Frontiers in Probabilistic Inference (2025), ICML GenBio Workshop (2025), ICML Actionable Interpretability Workshop (2025)}\normalsize
   \item \emph{Grant Reviewer}, Department of Energy ASCR Leadership Computing Challenge \hfill 2023
   \item \emph{Grant Review Panelist}, NASA ROSES/Astrophysics Research and Analysis \hfill 2023
   
   \end{packed_itemize}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Mentoring 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faMagic~Research Mentorship}}\\
 \hline
-\end{tabular*}\vspace{1.mm}
+\end{tabular*}\vspace{1mm}
 
 \begin{packed_itemize}
   \item Yitian Sun (Graduate, {MIT Physics}) \hfill 2021 -- 2024 \\ \emph{Probabilistic programming and deep generative modeling for $\gamma$-ray data analysis}  \href{https://ml4astro.github.io/icml2023/assets/52.pdf}{[Paper]}
@@ -665,18 +649,17 @@ Reviewing/Editorial/Advisory:
   \item Jean Somalwar (Undergraduate, {Princeton})\hfill 2019 -- 2020 \\ \emph{Searching for dark matter in Galactic subhalos using photon statistics} \href{https://arxiv.org/abs/2009.00021}{[arXiv:2009.00021]}
   \item Laura Chang (Graduate, {Princeton})\hfill 2018 -- 2020 \\ \emph{Searches for annihilating dark matter in the Milky Way} \href{https://arxiv.org/abs/1804.04132}{[arXiv:1804.04132]}\,\href{https://arxiv.org/abs/1908.10874}{[arXiv:1908.10874]}
   \end{packed_itemize}
-\vspace{2.0mm}
-
-%%%%%%%%%%%%
 
 %%%%%%%%%%%%
 %% Teaching 
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faWpforms~Teaching Experience}}\\
 \hline
-\end{tabular*}\vspace{3.5mm}
+\end{tabular*}\vspace{3mm}
 
 \noindent
 At MIT/IAIFI:
@@ -687,9 +670,10 @@ At MIT/IAIFI:
   \item 8.S50 Computational Data Science in Physics \href{https://github.com/smsharma/prob-prog-8.S50-tutorial}{[Tutorials]} \hfill Winter 2022
 \end{packed_itemize}
 
-\noindent
-At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to Research in Physics (Spring 2018), PHY312 Experimental Physics (Spring 2018), PHY115 Physics for Future Leaders (Fall 2017), PHY104 General Physics II (Spring 2016), PHY406 Nuclear and Elementary Particle Physics (Fall 2015), PHY106 Advanced Physics: Electromagnetism (Spring 2015), MAT201 Calculus III: Multivariable Calculus (Fall 2014, 2015), PHY105 Advanced Physics: Mechanics (Fall 2014)} \\
+\vspace{2mm}
 
+\noindent
+At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to Research in Physics (Spring 2018), PHY312 Experimental Physics (Spring 2018), PHY115 Physics for Future Leaders (Fall 2017), PHY104 General Physics II (Spring 2016), PHY406 Nuclear and Elementary Particle Physics (Fall 2015), PHY106 Advanced Physics: Electromagnetism (Spring 2015), MAT201 Calculus III: Multivariable Calculus (Fall 2014, 2015), PHY105 Advanced Physics: Mechanics (Fall 2014)}
 %\begin{packed_itemize}
 %  \item PHY235 Introduction to Research in Physics \hfill Spring 2018
 %  \item PHY312 Experimental Physics \hfill Spring 2018
@@ -701,9 +685,7 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
 %  \item PHY105 Advanced Physics (Mechanics) \hfill Fall 2014
 %\end{packed_itemize}
 %\vspace{2.0mm}
-
 %%%%%%%%%%%%
-
 %%%%%%%%%%%%%
 %%% Schools and Workshops
 %
@@ -722,16 +704,16 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
 %\end{packed_itemize}
 %\vspace{2.0mm}
 %
-%%%%%%%%%%%%%
-
 %%%%%%%%%%%%
 %% Work Experience
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faWrench~Research Training}}\\
 \hline
-\end{tabular*}\vspace{1.mm}
+\end{tabular*}\vspace{1mm}
 
 \begin{packed_itemize}
   \item CMS Experiment, CERN \hfill Geneva, Switzerland \\ \emph{Visiting Student Researcher} \hfill Aug. -- Sep. 2012 \\ \emph{Summer Student} \hfill Jun. -- Jul. 2011
@@ -739,16 +721,17 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
   \item Institute of Astronomy, University of Cambridge \hfill Cambridge, UK \\ \emph{Summer Student} \hfill Aug. -- Sep. 2011
   % \item CERN \hfill Geneva, Switzerland \\ \emph{Summer Student, CMS Experiment} \hfill Jun. -- Jul. 2011
 \end{packed_itemize}
-\vspace{2.0mm}
 
 %%%%%%%%%%%%
 %% References
+
+\vspace{3mm}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}}
 \large {\sc \Large{\faGroup~References}}\\
 \hline
-\end{tabular*}\vspace{1.mm}
+\end{tabular*}\vspace{1mm}
 
 \begin{packed_itemize}
   \item Kyle Cranmer (University of Wisconsin, Madison) \hfill \href{mailto:kyle.cranmer@wisc.edu}{\texttt{kyle.cranmer@wisc.edu}}
@@ -760,9 +743,6 @@ At Princeton (As Assistant in Instruction):  {\scriptsize PHY235 Introduction to
   \item Joshua Ruderman (New York University) \hfill \href{mailto:ruderman@nyu.edu}{\texttt{ruderman@nyu.edu}}
   \item Christoph Weniger (University of Amsterdam) \hfill \href{mailto:c.weniger@uva.nl}{\texttt{c.weniger@uva.nl}}
 \end{packed_itemize}
-
 %%%%%%%%%%%%
-
 \vspace*{\fill}
-
 \end{document}
